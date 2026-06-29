@@ -237,14 +237,24 @@ Semantic HTML ke benefits:
 
 ## Semantic Tags Used in Our Portfolio
 
-| Semantic Tag | Portfolio Mein Use |
+| Semantic Tag | Detailed Explanation and Portfolio Use |
 |---|---|
-| `<header>` | Website title and navigation |
-| `<nav>` | Page links |
-| `<main>` | Main page content |
-| `<section>` | Content groups |
-| `<article>` | Individual project cards |
-| `<footer>` | Copyright info |
+| `<header>` | `header` page ka top introduction area hota hai. Isme usually website name, logo, tagline, and navigation rakha jaata hai. Portfolio project mein `header` learner ka website title and nav links hold karta hai. Isse browser, screen reader, and developer ko clear hota hai ki yeh page ka starting/top identity area hai. |
+| `<nav>` | `nav` navigation links ke liye semantic tag hai. Iske andar woh links aate hain jinke through user Home, About, Projects, Contact jaise pages par jaata hai. Agar links ko normal paragraph mein rakh denge toh browser ko navigation ka meaning clear nahi hoga, isliye menu links ke liye `nav` better hai. |
+| `<main>` | `main` page ka primary content area hota hai. Header and footer har page par repeat ho sakte hain, lekin `main` ke andar current page ka actual content hota hai. Example: About page mein profile, skills, education; Contact page mein form. Ek page mein generally ek hi `main` use karna best practice hai. |
+| `<section>` | `section` related content ko group karta hai. Jab page mein alag-alag topics hote hain, jaise Welcome section, Skills section, Education section, Contact section, tab `section` use karte hain. Section ke andar heading dena good practice hai, because heading se user ko section ka topic samajh aata hai. |
+| `<article>` | `article` independent content block ke liye use hota hai. Portfolio mein har project apne aap mein complete content hai: title, description, maybe image/video. Isliye project card ke liye `article` meaningful hai. Agar kal project card ko kisi aur page par move karein, phir bhi woh independently samajh aayega. |
+| `<footer>` | `footer` page ka bottom area hota hai. Isme copyright, contact info, quick links, ya extra note aa sakta hai. Portfolio mein footer se page complete feel hota hai aur learner ko page structure ka proper start-middle-end pattern samajh aata hai. |
+
+## HTML5 and Semantic HTML - Deep Understanding
+
+HTML5 sirf old HTML ka new version nahi hai. HTML5 ne web pages ko more meaningful, media-friendly, and modern banaya. Pehle developers layout ke liye mostly `<div>` use karte the. `div` ka meaning generic hota hai, matlab browser ko nahi pata ki yeh header hai, menu hai, article hai, ya footer hai. HTML5 semantic tags is problem ko solve karte hain.
+
+Semantic HTML ka simple meaning hai: tag ka naam content ke role ko explain kare. Agar page ka top part hai toh `header`, navigation links hain toh `nav`, main content hai toh `main`, related block hai toh `section`, independent content hai toh `article`, bottom part hai toh `footer`. Isse code padhne wale learner ko immediately samajh aata hai ki page ka structure kya hai.
+
+Real-world example: School building mein different rooms ka naam hota hai: classroom, office, library, lab. Agar sab rooms ka naam sirf “room” ho, toh confusion hoga. Same tarah website mein agar har jagah sirf `div` use karein, toh meaning clear nahi hota. Semantic tags room names ki tarah kaam karte hain.
+
+Semantic tags ka benefit sirf readability nahi hai. Screen readers in tags ko use karke visually impaired users ko page navigate karne mein help kar sakte hain. Search engines bhi page ke important parts better understand kar sakte hain. Team project mein another developer code open karega toh usko quickly pata chalega ki kaunsa part navigation hai, kaunsa main content hai, aur kaunsa footer.
 
 ## Practical Improvement
 
@@ -382,17 +392,17 @@ Page par:
 
 | Code | Explanation |
 |---|---|
-| `<img src="media/profile.jpg"...>` | Image show karta hai. `src` image path hai. |
-| `alt="Profile photo of Rahul"` | Image description. Accessibility ke liye important. Agar image load na ho toh yeh text useful hota hai. |
-| `width="200"` | Image width 200 pixels set karta hai. |
-| `<ul>` | Unordered list start. Skills bullet points ke liye use. |
-| `<li>` | List item. Har skill ek list item hai. |
-| `<table>` | Table start. Rows and columns data ke liye. |
-| `<thead>` | Table heading group. |
-| `<tr>` | Table row. |
-| `<th>` | Table heading cell. |
-| `<tbody>` | Table main data group. |
-| `<td>` | Table data cell. |
+| `<img src="media/profile.jpg"...>` | Yeh image tag browser ko bolta hai ki page par ek image display karni hai. `src` ka full form source hota hai, yani image file ka path. Yahan `media/profile.jpg` ka meaning hai: current HTML file ke folder ke andar `media` folder mein jao, phir `profile.jpg` image load karo. Agar folder name ya file name galat hua, image show nahi hogi. |
+| `alt="Profile photo of Rahul"` | `alt` alternative text hota hai. Agar image load nahi hoti toh browser yeh text show kar sakta hai. Screen reader users ke liye bhi yeh bahut important hai, kyunki screen reader image ko dekh nahi sakta, woh alt text read karta hai. Isliye alt text meaningful hona chahiye, jaise “Profile photo of Rahul”, sirf “image” nahi. |
+| `width="200"` | Yeh image ki display width 200 pixels set karta hai. Isse image page par bahut badi nahi dikhegi. Important: yeh image file ka actual size change nahi karta, sirf browser mein display size control karta hai. Future mein CSS se image size aur better control kar sakte hain. |
+| `<ul>` | `ul` unordered list start karta hai. Unordered list tab use hoti hai jab points ka order important nahi hota. Skills list mein HTML, CSS, JavaScript ka order compulsory nahi hai, isliye bullet list ke liye `ul` best hai. |
+| `<li>` | `li` list item hota hai. `ul` ya `ol` ke andar har point ko `li` mein likhte hain. Agar learner direct text `ul` ke andar likhega bina `li` ke, structure incorrect ho jaayega. Har skill ek separate `li` item honi chahiye. |
+| `<table>` | `table` rows and columns wala structured data create karta hai. Education details mein Course, Institute, Year alag columns hain, isliye table use karna correct hai. Plain paragraph mein data likhne se comparison/readability weak ho jaati. |
+| `<thead>` | `thead` table ke heading area ko group karta hai. Iske andar usually column headings jaise Course, Institute, Year aate hain. Yeh browser and screen readers ko batata hai ki yeh table ka heading part hai, normal data rows nahi. |
+| `<tr>` | `tr` table row create karta hai. Table mein har horizontal line ek row hoti hai. Heading row bhi `tr` se banti hai aur data row bhi `tr` se banti hai. `tr` ke andar direct text nahi, balki `th` ya `td` cells hone chahiye. |
+| `<th>` | `th` table header cell hota hai. Column ke title ke liye use hota hai, jaise Course, Institute, Year. Browser by default `th` text ko bold and centered show kar sakta hai, but main reason styling nahi, semantic meaning hai. |
+| `<tbody>` | `tbody` table ke main data area ko group karta hai. Headings `thead` mein hoti hain aur actual records `tbody` mein. Isse table ka structure clean, readable, and accessible hota hai. |
+| `<td>` | `td` table data cell hota hai. Actual values jaise `HTML5 Basics`, `ABC Institute`, `2026` ko `td` ke andar likhte hain. Har row mein cells ka order column headings ke order ke according hona chahiye. |
 
 ## Why These Tags Are Used?
 
@@ -488,12 +498,12 @@ Page par projects list article style mein dikhegi. Agar video file available hai
 
 | Code | Explanation |
 |---|---|
-| `<article>` | Independent project block. Har project apne aap mein complete information hai. |
-| `<h3>` | Project title. Since section heading `h2` hai, project heading `h3` use ki. |
-| `<video controls width="400">` | Video player create karta hai. `controls` play/pause controls show karta hai. |
-| `<source src="media/intro.mp4"...>` | Video file path and type define karta hai. |
-| `type="video/mp4"` | Browser ko batata hai file MP4 video hai. |
-| Fallback text | Agar browser video support nahi karta toh message show hota hai. |
+| `<article>` | `article` independent content block ke liye use hota hai. Projects page mein har project ka apna title and description hai, isliye har project independently samajh aa sakta hai. Agar project card ko page se copy karke kisi blog ya portfolio section mein paste karein, tab bhi uska meaning complete rahega. |
+| `<h3>` | `h3` project title ke liye use hua hai. Page structure mein pehle `h1` website title hai, phir `h2` section title hai, aur us section ke andar individual project title `h3` hai. Yeh heading hierarchy maintain karta hai, jo readability, accessibility, and SEO ke liye important hai. |
+| `<video controls width="400">` | `video` tag HTML5 ka built-in media tag hai. Isse browser directly video player show karta hai. `controls` attribute play, pause, volume, seek bar jaise controls show karta hai. `width="400"` video player ki display width set karta hai, taaki video page layout mein manageable size mein dikhe. |
+| `<source src="media/intro.mp4"...>` | `source` tag video file ki location define karta hai. `src="media/intro.mp4"` ka meaning hai ki video `media` folder ke andar `intro.mp4` naam se stored hai. Agar file path galat hai, video player show ho sakta hai but video play nahi hoga. |
+| `type="video/mp4"` | Yeh browser ko file format batata hai. Browser pehle check karta hai ki kya woh MP4 video support karta hai. Correct MIME type dene se browser ko file handle karne mein help milti hai. |
+| Fallback text | Video tag ke andar jo normal text likha hota hai, woh fallback text hai. Agar user ka browser video tag support nahi karta, toh yeh message show ho sakta hai. Isse user ko reason samajh aata hai ki video kyun nahi chal raha. |
 
 ## Why `article` Is Better Here?
 
@@ -609,18 +619,18 @@ Validation test karne par browser error messages show karega.
 
 | Code | Explanation |
 |---|---|
-| `<form>` | Form area create karta hai. User input fields isi ke andar hote hain. |
-| `<label for="fullName">` | Label input se connect hota hai. `for` value input ke `id` se match honi chahiye. |
-| `<input type="text"...>` | Normal text input for name. |
-| `minlength="3"` | User ko at least 3 characters enter karne honge. |
-| `required` | Field blank nahi chhod sakte. |
-| `<input type="email"...>` | Email input. Browser email format check karta hai. |
-| `<select>` | Dropdown field create karta hai. |
-| `<option value="">` | Default empty option. Required validation ke liye useful. |
-| `<textarea>` | Long message input ke liye. |
-| `rows="5"` | Textarea height approx 5 rows. |
-| `minlength="10"` | Message at least 10 characters ka hona chahiye. |
-| `<button type="submit">` | Form submit button. |
+| `<form>` | `form` user input collect karne ka container hai. Contact page mein name, email, course, and message fields form ke andar grouped hain. Jab user submit button click karta hai, browser isi form ke fields ko validate karta hai. Real backend project mein form data server ko send kiya ja sakta hai. |
+| `<label for="fullName">` | `label` input field ka visible name/purpose batata hai. `for="fullName"` label ko us input se connect karta hai jiska `id="fullName"` hai. Is connection ka benefit: user label par click kare toh input focus ho jaata hai, aur screen reader field ka purpose clearly read kar sakta hai. |
+| `<input type="text"...>` | `input` single-line user input field create karta hai. `type="text"` ka meaning hai ki user normal text enter karega, jaise full name. Is field mein `id`, `name`, `minlength`, and `required` jaise attributes add karke behavior control hota hai. |
+| `minlength="3"` | Yeh browser validation rule hai. User ko minimum 3 characters enter karne honge. Example: `Ra` invalid ho sakta hai, but `Rahul` valid hoga. Yeh beginner-level validation ke liye useful hai, but real app mein backend validation bhi required hoti hai. |
+| `required` | `required` field ko compulsory banata hai. Agar user field blank chhodkar submit karega, browser form submit nahi karega and warning message show karega. Isse empty data submit hone se prevent hota hai. |
+| `<input type="email"...>` | Yeh email input field hai. Browser basic email pattern check karta hai, jaise value mein `@` and domain structure hona chahiye. Example: `rahul` invalid ho sakta hai, `rahul@gmail.com` valid format hai. |
+| `<select>` | `select` dropdown field create karta hai. Jab options fixed hon, jaise interested course HTML/CSS/JavaScript, tab dropdown useful hota hai. Isse user random spelling mistake nahi karega, predefined option choose karega. |
+| `<option value="">` | Yeh default empty option hai, usually text hota hai “Select a course”. `value=""` blank value rakhta hai. Jab `select` required hota hai, browser user ko actual option choose karne ke liye force kar sakta hai. |
+| `<textarea>` | `textarea` multi-line text input ke liye use hota hai. Message, feedback, address, description jaise long text ke liye input type text se better hai. Opening and closing tag dono hote hain. |
+| `rows="5"` | `rows` textarea ki visible height set karta hai. `rows="5"` ka meaning hai ki textarea approx 5 text lines ki height ke saath show hoga. User zyada text bhi type kar sakta hai, browser scroll add kar sakta hai. |
+| `minlength="10"` | Message field ke liye minimum 10 characters rule lagata hai. Iska purpose hai ki user very short message jaise `hi` submit na kare. Learners ko samjhao ki validation data quality improve karta hai. |
+| `<button type="submit">` | Submit button form validation trigger karta hai. Jab user is button par click karta hai, browser required, email, minlength jaise rules check karta hai. Agar form valid hai toh submit action proceed hota hai; agar invalid hai toh browser warning show karta hai. |
 
 ## Accessibility Explanation
 
@@ -769,23 +779,23 @@ Important: Ye abhi bhi HTML-focused project hai. Isme CSS styling intentionally 
 
 | Line / Code | Detailed Simple Hinglish Explanation |
 |---|---|
-| `<!DOCTYPE html>` | Browser ko batata hai ki yeh HTML5 document hai. Yeh line browser ko modern HTML mode mein page read karne mein help karti hai. |
-| `<html lang="en">` | Complete HTML document yahan se start hota hai. `lang="en"` batata hai page English language mein hai. Accessibility and SEO ke liye useful. |
-| `<head>` | Head section page ki information rakhta hai. Yeh content direct page body mein visible nahi hota. |
-| `<meta charset="UTF-8">` | Character encoding set karta hai. Isse normal text, symbols, special characters correctly show hote hain. |
-| `<meta name="viewport"...>` | Mobile responsive behavior ke liye important hai. Browser ko bolta hai page device width ke according adjust ho. |
-| `<meta name="description"...>` | Search engines ko page ka short summary deta hai. Yeh SEO-friendly HTML ka part hai. |
-| `<title>Rahul Portfolio \| Home</title>` | Browser tab mein title show karta hai. Search result mein bhi title ka role hota hai. |
-| `</head>` | Head section close karta hai. |
-| `<body>` | Visible page content yahan start hota hai. User browser mein isi section ka output dekhta hai. |
-| `<header>` | Page ka top section. Isme name, intro and navigation rakhe gaye hain. |
-| `<h1>Rahul Sharma</h1>` | Page ka main heading. Portfolio owner ka name show karta hai. |
-| `<p>Beginner Web Developer...</p>` | Short intro paragraph. Visitor ko immediately page owner ka context milta hai. |
-| `<nav aria-label="Main navigation">` | Navigation section create karta hai. `aria-label` screen reader users ko batata hai ki yeh main navigation hai. |
-| `<a href="index.html">Home</a>` | Home page link. Click karne par browser `index.html` open karta hai. |
-| `<a href="about.html">About</a>` | About page link. Multi-page website navigation ka part. |
-| `<a href="projects.html">Projects</a>` | Projects page link. User project details page par ja sakta hai. |
-| `<a href="contact.html">Contact</a>` | Contact page link. User form page par ja sakta hai. |
+| `<!DOCTYPE html>` | Browser ko batata hai ki yeh HTML5 document hai. Yeh file ki first line honi chahiye, because browser isi instruction se modern HTML rules use karta hai. Agar yeh missing ho, browser old/quirks mode mein render kar sakta hai. |
+| `<html lang="en">` | Complete HTML document ka root wrapper yahan se start hota hai. Saara `head` and `body` content isi ke andar aata hai. `lang="en"` page language English set karta hai, jo screen readers, browser translation, and SEO tools ke liye useful hai. |
+| `<head>` | Head section page ka invisible information area hai. Isme title, meta tags, SEO description, responsive settings, and future CSS links aate hain. User ko yeh content page par directly nahi dikhta, but browser ke liye yeh very important hai. |
+| `<meta charset="UTF-8">` | Character encoding set karta hai. UTF-8 use karne se English text, symbols, special characters, and many language characters properly display hote hain. Isko head ke andar top side par rakhna best practice hai. |
+| `<meta name="viewport"...>` | Mobile responsive behavior ke liye important line hai. `width=device-width` browser ko bolta hai ki page device ki actual screen width ke according fit ho. `initial-scale=1.0` default zoom normal rakhta hai. |
+| `<meta name="description"...>` | Search engines ko page ka short summary deta hai. Yeh text page body mein visible nahi hota, but Google/search tools page ka purpose understand karne ke liye use kar sakte hain. Har page ka description unique rakhna better hai. |
+| `<title>Rahul Portfolio \| Home</title>` | Browser tab mein page title show karta hai. User ke multiple tabs open hon toh title se page identify hota hai. SEO mein bhi title important hota hai, isliye title meaningful and page-specific hona chahiye. |
+| `</head>` | Head section close karta hai. Iske baad browser visible page content ke liye `body` section read karega. Closing tag structure ko clean and valid banata hai. |
+| `<body>` | Body visible page content ka start point hai. Browser window mein jo heading, paragraph, list, nav, footer dikh raha hai, woh sab body ke andar likha hota hai. |
+| `<header>` | Page ka top semantic section hai. Is home page mein website owner ka name, short intro, and navigation links header mein rakhe gaye hain. Header se page ki identity immediately clear hoti hai. |
+| `<h1>Rahul Sharma</h1>` | Page ka main heading hai. Home page par portfolio owner ka naam main identity hai, isliye `h1` use kiya. Ek page par generally ek clear `h1` rakhna best practice hai. |
+| `<p>Beginner Web Developer...</p>` | Short intro paragraph hai. Visitor ko quickly pata chal jaata hai ki Rahul kya learn kar raha hai and page ka context kya hai. Paragraph normal readable text ke liye use hota hai. |
+| `<nav aria-label="Main navigation">` | Navigation area create karta hai. `aria-label="Main navigation"` screen reader users ko batata hai ki yeh main menu hai. Accessibility ke liye yeh helpful hai, especially jab page mein multiple navigation areas ho sakte hain. |
+| `<a href="index.html">Home</a>` | Anchor link Home page ke liye hai. `href="index.html"` destination file path hai. Click karne par browser current folder ke andar `index.html` open karta hai. |
+| `<a href="about.html">About</a>` | About page link hai. Same folder mein `about.html` file honi chahiye. Agar file name mismatch hua toh link work nahi karega. |
+| `<a href="projects.html">Projects</a>` | Projects page link hai. User is link se projects details page par ja sakta hai. Multi-page website mein same navigation repeat karna user ke liye easy hota hai. |
+| `<a href="contact.html">Contact</a>` | Contact page link hai. User is page par form fill karke message bhejne ka flow samajh sakta hai. `href` exact file name ke saath match hona chahiye. |
 | `</nav>` | Navigation links ka group close hota hai. |
 | `</header>` | Header section close hota hai. |
 | `<main>` | Page ka main unique content yahan start hota hai. Har page mein main content alag hota hai. |
@@ -899,40 +909,40 @@ Important: Ye abhi bhi HTML-focused project hai. Isme CSS styling intentionally 
 
 | Line / Code | Detailed Simple Hinglish Explanation |
 |---|---|
-| `<!DOCTYPE html>` | HTML5 document declaration. Browser ko correct mode mein render karne mein help karta hai. |
-| `<html lang="en">` | Page ka root element. `lang="en"` accessibility and SEO ke liye language define karta hai. |
-| `<head>` | Metadata section start. Page information yahan hoti hai. |
-| `<meta charset="UTF-8">` | Text encoding define karta hai. |
-| `<meta name="viewport"...>` | Mobile screen ke liye page scale set karta hai. |
-| `<meta name="description"...>` | About page ka SEO summary. Search engine ko page content samajhne mein help karta hai. |
-| `<title>Rahul Portfolio \| About</title>` | Browser tab title. User ko pata chalta hai yeh about page hai. |
-| `<body>` | Visible content start. |
-| `<header>` | Top area start. Isme heading and navigation hai. |
-| `<h1>About Rahul</h1>` | About page ka main heading. |
-| `<nav aria-label="Main navigation">` | Accessible navigation. Screen reader ko navigation ka purpose clear hota hai. |
-| `<a href="...">` | Har anchor tag ek page link create karta hai. |
-| `<main>` | Main content start. About page ka unique content yahan hai. |
-| `<section>` | Profile content group karne ke liye section. |
-| `<h2>Profile</h2>` | Profile section ka heading. |
-| `<img src="media/profile.jpg"...>` | Profile image load karta hai. `src` image location batata hai. |
-| `alt="Rahul Sharma smiling..."` | Image ka meaningful text description. Accessibility ke liye important. |
-| `width="220"` | Image ki display width set karta hai. |
-| `<p>I am learning...</p>` | Profile paragraph. Learner ke baare mein short introduction. |
-| `<section>` | Skills ke liye separate section start. |
-| `<h2>Skills</h2>` | Skills section heading. |
-| `<ul>` | Skills ko bullet list mein show karne ke liye unordered list. |
-| `<li>...</li>` | Har skill ek list item hai. |
-| `<section>` | Education table ke liye section. |
-| `<h2>Education</h2>` | Education section heading. |
-| `<table>` | Structured rows and columns data ke liye table start. |
-| `<thead>` | Table heading rows ko group karta hai. |
-| `<tr>` | Table row. |
-| `<th>` | Table header cell. Column ka title show karta hai. |
-| `<tbody>` | Table ka main data body. |
-| `<td>` | Normal table data cell. |
-| `</table>` | Table close karta hai. |
-| `<footer>` | Bottom section. |
-| `&copy;` | Copyright symbol render karta hai. |
+| `<!DOCTYPE html>` | Yeh line browser ko batati hai ki page HTML5 standard follow kar raha hai. About page bhi ek separate HTML document hai, isliye isme bhi same declaration top par required hai. |
+| `<html lang="en">` | Page ka root element hai. `lang="en"` se browser and assistive tools ko language English pata chalti hai. Har page par language define karna professional habit hai. |
+| `<head>` | About page ki invisible information yahan start hoti hai. Is section mein browser tab title, SEO description, encoding, and responsive settings rakhe gaye hain. |
+| `<meta charset="UTF-8">` | Text encoding define karta hai. Learner ke naam, symbols, and special characters properly display karne ke liye UTF-8 safe choice hai. |
+| `<meta name="viewport"...>` | Mobile devices ke liye page ko properly scale karne mein help karta hai. Portfolio agar phone par open ho, toh browser page ko device width ke according render karega. |
+| `<meta name="description"...>` | About page ka SEO summary hai. Search engine ko batata hai ki is page mein Rahul ki skills, education, and learning journey ke baare mein content hai. |
+| `<title>Rahul Portfolio \| About</title>` | Browser tab ka title hai. Is title se user ko pata chalta hai ki woh portfolio ke About page par hai, Home page par nahi. |
+| `<body>` | Visible content start karta hai. About page mein user ko heading, navigation, image, profile paragraph, skills list, education table, and footer dikhte hain. |
+| `<header>` | Top area start karta hai. Isme page heading and navigation links rakhe gaye hain, taaki user kisi bhi page par easily move kar sake. |
+| `<h1>About Rahul</h1>` | About page ka main heading hai. Yeh page ka primary topic define karta hai. Heading hierarchy ke liye `h1` top-level heading hoti hai. |
+| `<nav aria-label="Main navigation">` | Accessible navigation section hai. `aria-label` screen reader ko clear karta hai ki yeh main navigation menu hai. |
+| `<a href="...">` | Har anchor tag ek clickable page link banata hai. `href` ke andar destination file ka naam hota hai, jaise `index.html`, `projects.html`, ya `contact.html`. |
+| `<main>` | About page ka unique main content start karta hai. Header/footer common parts hain, but profile, skills, and education about page ka actual main content hai. |
+| `<section>` | Profile content group karne ke liye section use hua hai. Section related content ko ek block mein organize karta hai. |
+| `<h2>Profile</h2>` | Profile section ka heading hai. Since page ka main heading `h1` hai, section heading ke liye `h2` logical choice hai. |
+| `<img src="media/profile.jpg"...>` | Profile image load karta hai. `src` image ka path batata hai. Browser current folder se `media` folder mein jaakar `profile.jpg` image dhundhega. |
+| `alt="Rahul Sharma smiling..."` | Image ka meaningful text description hai. Agar image load nahi hoti ya screen reader use ho raha hai, toh yeh text image ka purpose explain karta hai. |
+| `width="220"` | Image ki display width 220 pixels set karta hai. Yeh page layout ko controlled rakhta hai, taaki image unexpectedly huge na dikhe. |
+| `<p>I am learning...</p>` | Profile paragraph hai. Isme learner apni learning journey simple text mein explain karta hai. Paragraph tag normal readable content ke liye best hai. |
+| `<section>` | Skills ke liye separate section start hota hai. Separate section se profile and skills content mix nahi hota. |
+| `<h2>Skills</h2>` | Skills section heading hai. User ko immediately pata chal jaata hai ki neeche skills ki list aayegi. |
+| `<ul>` | Skills ko bullet list mein show karne ke liye unordered list use hoti hai. Skills ka order strict nahi hota, isliye `ul` correct choice hai. |
+| `<li>...</li>` | Har skill ek separate list item hai. Isse skills readable and scannable banti hain. Har bullet point ko `li` ke andar hi likhna chahiye. |
+| `<section>` | Education table ke liye separate section start hota hai. Yeh content profile/skills se alag topic hai. |
+| `<h2>Education</h2>` | Education section ka heading hai. Heading se learner and screen reader dono ko table ka context milta hai. |
+| `<table>` | Structured rows and columns data ke liye table start karta hai. Education details mein course, institute, year columns hain, isliye table meaningful hai. |
+| `<thead>` | Table heading rows ko group karta hai. Column names ko `thead` mein rakhne se table structure clear hota hai. |
+| `<tr>` | Table row create karta hai. Har row ke andar heading cells ya data cells aate hain. |
+| `<th>` | Table header cell hai. Column title jaise Course, Institute, Year ke liye use hota hai. |
+| `<tbody>` | Table ka main data body hai. Actual education records `tbody` ke andar rakhte hain. |
+| `<td>` | Normal table data cell hai. Course name, institute name, and year jaise actual values `td` mein aati hain. |
+| `</table>` | Table close karta hai. Is closing tag ke baad browser ko pata chalta hai ki education table complete ho gaya. |
+| `<footer>` | Bottom section hai. Footer page ka closing area create karta hai, jahan copyright ya extra info rakhi ja sakti hai. |
+| `&copy;` | HTML entity hai jo copyright symbol render karta hai. Direct symbol ke bajay entity use karna safe and standard approach hai. |
 
 ---
 
@@ -1003,30 +1013,30 @@ Important: Ye abhi bhi HTML-focused project hai. Isme CSS styling intentionally 
 
 | Line / Code | Detailed Simple Hinglish Explanation |
 |---|---|
-| `<!DOCTYPE html>` | Browser ko HTML5 document type batata hai. |
-| `<html lang="en">` | Root HTML element with language. |
-| `<head>` | Page metadata start hota hai. |
-| `<meta charset="UTF-8">` | Character support ke liye encoding. |
-| `<meta name="viewport"...>` | Mobile-friendly page rendering ke liye. |
-| `<meta name="description"...>` | Projects page ka SEO description. |
-| `<title>Rahul Portfolio \| Projects</title>` | Browser tab mein projects page title. |
-| `<body>` | Visible content start. |
-| `<header>` | Page top area. |
-| `<h1>My Projects</h1>` | Projects page ka main heading. |
-| `<nav aria-label="Main navigation">` | Page links ka accessible navigation area. |
-| `<main>` | Projects page ka main content. |
-| `<section>` | Featured work group. |
-| `<h2>Featured Work</h2>` | Section heading. |
-| `<article>` | Independent project card. Article is useful because each project is a complete content item. |
-| `<h3>Portfolio Website</h3>` | Project title. |
-| `<p>A multi-page...</p>` | Project description. |
-| Second `<article>` | Dusra independent project block. |
-| `<section>` | Demo video ke liye separate section. |
-| `<video controls width="420">` | Video player create karta hai. `controls` play/pause UI show karta hai. |
-| `<source src="media/intro.mp4"...>` | Video file path and format define karta hai. |
-| `type="video/mp4"` | Browser ko batata hai file MP4 video hai. |
-| Fallback text | Agar browser video tag support na kare toh yeh message show hota hai. |
-| `<footer>` | Bottom copyright section. |
+| `<!DOCTYPE html>` | Browser ko batata hai ki projects page HTML5 document hai. Har separate HTML page mein yeh declaration top par hona chahiye. |
+| `<html lang="en">` | Root HTML element hai jo complete projects page ko wrap karta hai. `lang="en"` language define karta hai. |
+| `<head>` | Page metadata start hota hai. Projects page ke title, description, encoding, and viewport settings yahan rakhe gaye hain. |
+| `<meta charset="UTF-8">` | Character support ke liye encoding set karta hai. Yeh text and symbols ko correctly display karne mein help karta hai. |
+| `<meta name="viewport"...>` | Mobile-friendly page rendering ke liye important hai. Iske bina mobile par page zoomed-out ya awkward dikhega. |
+| `<meta name="description"...>` | Projects page ka SEO description hai. Search engine ko page ka topic samajh aata hai: Rahul ke projects and HTML5 learning work. |
+| `<title>Rahul Portfolio \| Projects</title>` | Browser tab mein projects page title show karta hai. Page-specific title user navigation ko easy banata hai. |
+| `<body>` | Visible projects page content start hota hai. Header, project articles, video section, and footer body mein dikhte hain. |
+| `<header>` | Page ka top area hai. Isme main heading and navigation links rakhe gaye hain. |
+| `<h1>My Projects</h1>` | Projects page ka main heading hai. Yeh user ko clearly batata hai ki page projects showcase ke liye hai. |
+| `<nav aria-label="Main navigation">` | Page links ka accessible navigation area hai. Screen reader user ko navigation ka purpose clear hota hai. |
+| `<main>` | Projects page ka main content start karta hai. Iske andar featured work and demo video sections aate hain. |
+| `<section>` | Featured work group karta hai. Related project cards ko ek section ke andar organize karna clean structure deta hai. |
+| `<h2>Featured Work</h2>` | Section heading hai. User ko pata chalta hai ki neeche featured projects listed hain. |
+| `<article>` | Independent project card hai. Article isliye useful hai kyunki har project apne title and description ke saath complete content item hai. |
+| `<h3>Portfolio Website</h3>` | Project title hai. `h3` use hota hai because yeh `h2` Featured Work ke andar sub-heading hai. |
+| `<p>A multi-page...</p>` | Project description hai. Isme learner explain karta hai ki project kis cheez se bana hai and kya purpose hai. |
+| Second `<article>` | Dusra independent project block hai. Har project ke liye separate article use karne se structure repeatable and clean banta hai. |
+| `<section>` | Demo video ke liye separate section hai. Video content project cards se alag type ka content hai, isliye separate section readable hai. |
+| `<video controls width="420">` | HTML5 video player create karta hai. `controls` user ko play/pause/volume controls deta hai. `width="420"` player ki display width set karta hai. |
+| `<source src="media/intro.mp4"...>` | Video file path and format define karta hai. Browser `media` folder se `intro.mp4` load karega. |
+| `type="video/mp4"` | Browser ko batata hai ki source file MP4 format ki video hai. Correct type browser ko media handle karne mein help karta hai. |
+| Fallback text | Agar browser video tag support na kare ya video load na ho, toh fallback message user ko explain kar sakta hai ki video support available nahi hai. |
+| `<footer>` | Bottom copyright section hai. Footer page ka ending area create karta hai. |
 
 ---
 
@@ -1101,37 +1111,37 @@ Important: Ye abhi bhi HTML-focused project hai. Isme CSS styling intentionally 
 
 | Line / Code | Detailed Simple Hinglish Explanation |
 |---|---|
-| `<!DOCTYPE html>` | HTML5 document declaration. |
-| `<html lang="en">` | Root element and page language. |
-| `<head>` | Metadata and SEO section. |
-| `<meta charset="UTF-8">` | Character encoding. |
-| `<meta name="viewport"...>` | Responsive page behavior. |
-| `<meta name="description"...>` | Search engine friendly contact page summary. |
-| `<title>Rahul Portfolio \| Contact</title>` | Browser tab title. |
-| `<body>` | Visible page content start. |
-| `<header>` | Top page section. |
-| `<h1>Contact Me</h1>` | Main page heading. |
-| `<nav aria-label="Main navigation">` | Accessible navigation links. |
-| `<main>` | Main contact content. |
-| `<section>` | Contact form section group. |
-| `<h2>Send a Message</h2>` | Form section heading. |
-| `<form>` | Form container. All input fields are inside this form. |
-| `<label for="fullName">Full Name</label>` | Label for name input. `for` connects with input `id`. |
-| `<input type="text"...>` | Text input field for full name. |
-| `id="fullName"` | Unique identifier. Label uses this id to connect. |
-| `name="fullName"` | Field name used when form data is submitted. |
-| `minlength="3"` | Minimum 3 characters required. |
-| `required` | Field cannot be empty. Browser validates it. |
-| `<input type="email"...>` | Email input. Browser checks email format. |
-| `<select id="course"...>` | Dropdown list for course selection. |
-| `<option value="">Select a course</option>` | Default empty option. Required validation works because value is empty. |
-| `<option value="html">HTML5</option>` | Dropdown option for HTML5. |
-| `<textarea...>` | Multi-line message input. |
-| `rows="5"` | Textarea height around five lines. |
-| `minlength="10"` | Message must have at least 10 characters. |
-| `<button type="submit">` | Form submit button. |
-| `</form>` | Form ends here. |
-| `<footer>` | Footer area. |
+| `<!DOCTYPE html>` | Contact page bhi HTML5 document hai, isliye top par declaration required hai. Browser is instruction ke basis par modern HTML mode use karta hai. |
+| `<html lang="en">` | Complete contact page ka root element hai. `lang="en"` language define karta hai, jo accessibility and SEO ke liye helpful hai. |
+| `<head>` | Metadata and SEO section start hota hai. Contact page ka title, description, encoding, and viewport settings yahan rakhe gaye hain. |
+| `<meta charset="UTF-8">` | Character encoding set karta hai. Isse form labels, symbols, and normal text correctly render hote hain. |
+| `<meta name="viewport"...>` | Responsive page behavior ke liye important hai. Contact form mobile screen par properly scale ho sake, iske liye viewport meta tag use hota hai. |
+| `<meta name="description"...>` | Search engine friendly contact page summary hai. Search engine ko samajh aata hai ki yeh accessible HTML5 contact form wala page hai. |
+| `<title>Rahul Portfolio \| Contact</title>` | Browser tab title set karta hai. User ko clearly pata chalta hai ki woh Contact page par hai. |
+| `<body>` | Visible page content start karta hai. Contact page mein heading, nav, form fields, submit button, and footer body ke andar visible hote hain. |
+| `<header>` | Top page section hai. Isme page heading and navigation links aate hain. |
+| `<h1>Contact Me</h1>` | Main page heading hai. User ko page ka purpose immediately clear hota hai: yahan contact/message send karna hai. |
+| `<nav aria-label="Main navigation">` | Accessible navigation links ka group hai. `aria-label` screen reader users ko batata hai ki yeh main navigation menu hai. |
+| `<main>` | Main contact content start karta hai. Contact form page ka primary content form hai, isliye form main ke andar rakha gaya hai. |
+| `<section>` | Contact form section group karta hai. Section use karne se form-related heading and form fields ek meaningful block mein aa jaate hain. |
+| `<h2>Send a Message</h2>` | Form section heading hai. User ko batata hai ki neeche message send karne ka form hai. |
+| `<form>` | Form container hai. Saare input fields isi ke andar hain. Browser submit button click hone par isi form ke validation rules check karta hai. |
+| `<label for="fullName">Full Name</label>` | Label name input ka purpose batata hai. `for="fullName"` input ke `id="fullName"` se connect hota hai, jisse accessibility and click behavior improve hota hai. |
+| `<input type="text"...>` | Text input field hai jahan user apna full name enter karega. Single-line normal text ke liye `type="text"` use hota hai. |
+| `id="fullName"` | Unique identifier hai. Label isi `id` ko use karke input se connect hota hai. Same page par same id repeat nahi karna chahiye. |
+| `name="fullName"` | Field ka submitted data name hai. Backend ya form processing mein yeh key ban sakti hai, jaise `fullName=Rahul Sharma`. |
+| `minlength="3"` | Browser validation rule hai. User ko minimum 3 characters enter karne honge. Yeh very short/invalid name input ko prevent karta hai. |
+| `required` | Field compulsory banata hai. User blank chhodkar submit karega toh browser warning show karega and form submit nahi hoga. |
+| `<input type="email"...>` | Email input field hai. Browser basic email format validate karta hai, jaise `name@example.com`. Yeh normal text input se better hai because built-in email validation milti hai. |
+| `<select id="course"...>` | Dropdown list create karta hai. Jab options fixed hon, dropdown user ko correct option choose karne mein help karta hai and spelling mistakes avoid karta hai. |
+| `<option value="">Select a course</option>` | Default empty option hai. Required dropdown ke saath yeh useful hai, kyunki user ko actual course choose karna padega. Blank value valid selection nahi maana jaata. |
+| `<option value="html">HTML5</option>` | Dropdown option hai. User ko screen par `HTML5` dikhega, aur submit hone par value `html` ja sakti hai. Value usually lowercase/short rakhi jaati hai. |
+| `<textarea...>` | Multi-line message input hai. Contact message normal input se lamba ho sakta hai, isliye textarea use karna better hai. |
+| `rows="5"` | Textarea ki visible height approx five lines set karta hai. User zyada text type kare toh textarea scroll ya resize behavior show kar sakta hai. |
+| `minlength="10"` | Message ke liye minimum 10 characters required karta hai. Isse user very short message submit nahi karega and input quality better hogi. |
+| `<button type="submit">` | Form submit button hai. Is button par click karne se browser pehle validation run karta hai, phir form submit process start karta hai. |
+| `</form>` | Form yahan close hota hai. Is closing tag se browser ko pata chalta hai ki form fields ka group complete ho gaya. |
+| `<footer>` | Footer area hai. Page ka bottom section create karta hai jahan copyright ya closing information rakhi ja sakti hai. |
 
 ---
 
