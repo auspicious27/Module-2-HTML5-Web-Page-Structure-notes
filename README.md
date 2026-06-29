@@ -1,1000 +1,135 @@
-# Module 2: HTML5 - Web Page Structure Complete Notes
+# Module 2: HTML5 Web Page Structure - Portfolio Project Based Notes
 
 Language style: Simple Hinglish  
-Goal: Learners ko HTML5 web page structure starting se samjhana, practical karwana, aur code ka har important part explain karna.
+Teaching style: One sequence, one integrated project, every code explained in detail  
+Final output: Learner ek basic multi-page portfolio website bana lega.
 
 ---
 
-# Beginner Teaching Approach - Module 2 Ko Kaise Padhana Hai
+## Module Goal
 
-Module 2 mein learners HTML5 seekhenge. HTML web development ka foundation hai. Agar learner HTML structure clearly samajh leta hai, toh CSS, JavaScript, React aur full stack development ka base strong ho jaata hai. Is module ko padhate time humein sirf tags yaad nahi karwane. Humein yeh samjhana hai ki browser HTML ko kaise read karta hai, tags ka meaning kya hota hai, aur real website mein unka use kahan hota hai.
+Is module mein hum HTML5 ke topics ko alag-alag theory ke form mein nahi, balki ek real portfolio website banate hue seekhenge. Learner step by step ek static multi-page website create karega. Isi website ke andar HTML5 document structure, semantic tags, forms, validation, tables, lists, images, media, accessibility, SEO, and cross-browser basics cover honge.
 
-Day 2 par students abhi beginner stage par hote hain. Isliye har topic ko teen layer mein explain karo. Pehle simple theory, phir real-world example, phir small practical. Jab practical karwao, toh code likhne ke baad output observe karwana must hai. Learner ko yeh clear hona chahiye ki kaunsi line browser mein kya effect create kar rahi hai.
-
-## Teaching Flow
-
-```text
-Concept explain karo
--> Real-world example do
--> Small code likhwao
--> Browser output dikhao
--> Har line ka meaning explain karo
--> Common mistake batao
--> Small task do
-```
-
-## HTML Ko Ek Simple Story Se Samjho
-
-Website ek document ki tarah hoti hai. Jaise school project file mein title, headings, paragraphs, images, tables aur sections hote hain, waise website mein bhi content structured hota hai. HTML browser ko batata hai ki kaunsa part heading hai, kaunsa paragraph hai, kaunsi image hai, kaunsa navigation hai, aur kaunsa form hai.
-
-Browser HTML ko read karta hai aur visual page bana deta hai. HTML khud design language nahi hai. HTML structure deta hai. CSS design deta hai. JavaScript behavior/logic deta hai.
-
-```text
-HTML = Structure
-CSS = Styling
-JavaScript = Interaction
-```
-
-Example:
-
-```text
-HTML: Button create karta hai
-CSS: Button ka color/size set karta hai
-JavaScript: Button click hone par action perform karta hai
-```
+Is approach ka benefit yeh hai ki learner ko har topic isolated nahi lagega. Har topic ka use directly project mein dikhega. Jab learner `header` seekhega toh usko website ka top part banega. Jab `nav` seekhega toh pages connect honge. Jab form seekhega toh contact page complete hoga. Jab accessibility seekhega toh image alt text and label ka real use samjhega.
 
 ---
 
-## Index - Is Module Mein Kya Seekhenge
+## What We Will Build
 
-| No. | Topic | Main Idea |
-|---|---|---|
-| 1 | HTML5 Document Structure | Basic page skeleton |
-| 2 | Semantic HTML Elements | Meaningful layout tags |
-| 3 | Forms and Input Validation | User input lena and validate karna |
-| 4 | Tables, Lists, Images and Media | Content ko structured way mein show karna |
-| 5 | Accessibility Best Practices | Website sab users ke liye usable banana |
-| 6 | SEO-Friendly HTML Layouts | Search engines ke liye clear structure |
-| 7 | Cross-Browser Compatibility | Different browsers mein page correctly work kare |
-| 8 | Project 2 | Multi-page static website |
+Hum ek basic portfolio website banayenge:
 
----
+```text
+portfolio-site/
+  index.html
+  about.html
+  projects.html
+  contact.html
+  media/
+    profile.jpg
+    intro.mp4
+```
 
-# Day/Class Setup - VS Code Practical Start
+Website pages:
 
-HTML ka practical karne ke liye humein heavy setup nahi chahiye. Sirf VS Code aur browser enough hai.
-
-## Required Tools
-
-| Tool | Use |
+| Page | Purpose |
 |---|---|
-| VS Code | HTML files create/edit karne ke liye |
-| Chrome Browser | Page output dekhne ke liye |
-| Live Server extension optional | Auto refresh ke liye |
-| Folder | Project files organize karne ke liye |
+| `index.html` | Home page with intro and navigation |
+| `about.html` | About page with skills list and education table |
+| `projects.html` | Projects page with articles and media |
+| `contact.html` | Contact form with validation |
 
-## Folder Setup
+Topics covered inside this project:
 
-1. Ek folder banao:
+| Topic | Where We Use It |
+|---|---|
+| HTML5 document structure | Every page |
+| Semantic tags | Header, nav, main, section, article, footer |
+| Forms and validation | Contact page |
+| Tables | About page education table |
+| Lists | Skills list |
+| Images and media | Profile image and intro video |
+| Accessibility | Labels, alt text, heading order |
+| SEO | Title, meta description, semantic layout |
+| Cross-browser basics | Testing pages in browser |
+
+---
+
+# Step 1: Create Project Folder in VS Code
+
+## Theory
+
+Before writing code, project files should be properly organized. A website usually has multiple files: HTML pages, images, videos, CSS files, and JavaScript files. Day 2 par hum only HTML focus karenge, but folder structure clean rakhenge so future modules mein CSS and JavaScript add karna easy ho.
+
+VS Code ek code editor hai. Isme folder open karke hum files create, edit and save kar sakte hain. Browser HTML files ko read karke webpage display karta hai.
+
+## Practical Steps
+
+1. VS Code open karo.
+2. Documents/Desktop mein folder banao:
 
 ```text
-module-2-html-practice
+portfolio-site
 ```
 
-2. VS Code open karo.
-3. `File -> Open Folder` se folder open karo.
-4. New file banao:
+3. VS Code mein `File -> Open Folder` select karo.
+4. `portfolio-site` folder open karo.
+5. New files create karo:
 
 ```text
 index.html
+about.html
+projects.html
+contact.html
 ```
 
-5. Browser mein file open karo.
-
----
-
-# 1. HTML5 Document Structure
-
-## Starting Theory
-
-HTML ka full form HyperText Markup Language hai. HTML website ka structure banata hai. Jaise building banane se pehle pillars, rooms, doors aur windows ka structure hota hai, waise website banane ke liye HTML basic structure provide karta hai.
-
-HTML programming language nahi hai; yeh markup language hai. Iska kaam browser ko batana hota hai ki kaunsa content heading hai, kaunsa paragraph hai, kaunsi image hai, kaunsa form hai, aur kaunsa section hai.
-
-HTML5 HTML ka modern version hai. HTML5 mein semantic tags, audio/video support, better form input types aur modern web page structure ke liye improvements aaye.
-
-## Basic HTML5 Skeleton
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First HTML5 Page</title>
-</head>
-<body>
-  <h1>Welcome to HTML5</h1>
-  <p>This is my first structured web page.</p>
-</body>
-</html>
-```
-
-## Line-by-Line Explanation
-
-| Line | Code | Explanation |
-|---|---|---|
-| 1 | `<!DOCTYPE html>` | Browser ko batata hai ki yeh HTML5 document hai. |
-| 2 | `<html lang="en">` | Complete HTML page ka root element. `lang="en"` batata hai ki page language English hai. |
-| 3 | `<head>` | Head section mein page ki information hoti hai, jo usually screen par directly visible nahi hoti. |
-| 4 | `<meta charset="UTF-8">` | Character encoding set karta hai. Isse text, symbols properly render hote hain. |
-| 5 | `<meta name="viewport"...>` | Mobile responsive layout ke liye important hai. Browser ko screen width ke according page set karne ko bolta hai. |
-| 6 | `<title>` | Browser tab mein jo title show hota hai. |
-| 7 | `</head>` | Head section close karta hai. |
-| 8 | `<body>` | Body mein visible page content hota hai. |
-| 9 | `<h1>` | Main heading show karta hai. |
-| 10 | `<p>` | Paragraph text show karta hai. |
-| 11 | `</body>` | Body close karta hai. |
-| 12 | `</html>` | HTML document close karta hai. |
-
-
-## Browser HTML Ko Kaise Samajhta Hai?
-
-Jab browser HTML file open karta hai, woh file ko top se bottom read karta hai. Browser tags ko identify karta hai aur phir page ka structure banata hai. Is structure ko DOM yani Document Object Model bhi bolte hain. Beginner level par simply samjho: browser HTML tags ko page elements mein convert karta hai.
-
-Example:
-
-```html
-<h1>Hello</h1>
-<p>Welcome to my page.</p>
-```
-
-Browser output:
+6. Ek folder create karo:
 
 ```text
-Hello                  -> large heading
-Welcome to my page.    -> normal paragraph
+media
 ```
 
-Yahan `<h1>` browser ko bol raha hai ki yeh main heading hai. `<p>` browser ko bol raha hai ki yeh paragraph text hai.
-
-## Opening Tag and Closing Tag
-
-Most HTML elements opening aur closing tag ke saath likhe jaate hain.
-
-```html
-<p>This is a paragraph.</p>
-```
-
-| Part | Meaning |
-|---|---|
-| `<p>` | Opening tag |
-| `This is a paragraph.` | Content |
-| `</p>` | Closing tag |
-
-Agar closing tag miss ho jaaye, browser kabhi-kabhi page ko guess karke render karta hai, lekin correct practice hamesha proper closing tag likhna hai.
-
-## Empty / Self-Closing Type Elements
-
-Kuch elements ke andar text content nahi hota, jaise image aur meta.
-
-```html
-<img src="photo.jpg" alt="Profile photo">
-<meta charset="UTF-8">
-```
-
-In tags ka kaam attributes ke through hota hai. `img` image show karta hai, `meta` page information provide karta hai.
-
-## Attributes Kya Hote Hain?
-
-Attributes tag ko extra information dete hain.
-
-```html
-<a href="about.html">About</a>
-```
-
-Yahan `href="about.html"` attribute hai. Yeh browser ko batata hai ki link click karne par user ko `about.html` page par le jaana hai.
-
----
-
-## Small Practical 1: First HTML Page
-
-Create `index.html` and paste the skeleton code. Browser mein open karo.
-
-### What Students Should Observe
-
-- Browser tab mein title show hota hai.
-- Page par heading and paragraph show hote hain.
-- Agar `<title>` change karte hain, browser tab ka title change hota hai.
-- Agar `<h1>` text change karte hain, page heading change hoti hai.
-
-### Learning Outcome
-
-Students samjhenge ki HTML page ek proper document structure follow karta hai. Har HTML page ka base skeleton similar hota hai.
-
----
-
-# 2. Semantic HTML Elements
-
-## Starting Theory
-
-Semantic ka meaning hota hai meaningful. Semantic HTML tags browser, developer, screen reader aur search engine ko content ka meaning batate hain.
-
-Example:
-
-```html
-<div>Header content</div>
-```
-
-Yeh browser ko sirf generic box lagta hai.
-
-But:
-
-```html
-<header>Header content</header>
-```
-
-Yeh clearly batata hai ki content page ka header hai.
-
-Semantic HTML clean, readable, accessible aur SEO-friendly hota hai.
-
-## Important Semantic Tags
-
-| Tag | Use |
-|---|---|
-| `<header>` | Page ya section ka top area |
-| `<nav>` | Navigation links |
-| `<main>` | Page ka main content |
-| `<section>` | Related content ka section |
-| `<article>` | Independent content, blog/card/news |
-| `<footer>` | Page bottom information |
-
-## Semantic Layout Example
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Semantic Page</title>
-</head>
-<body>
-  <header>
-    <h1>My Learning Website</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section>
-      <h2>About This Course</h2>
-      <p>This course teaches web development step by step.</p>
-    </section>
-
-    <article>
-      <h2>Why Learn HTML?</h2>
-      <p>HTML is the foundation of every web page.</p>
-    </article>
-  </main>
-
-  <footer>
-    <p>Copyright 2026 - My Learning Website</p>
-  </footer>
-</body>
-</html>
-```
-
-## Code Explanation
-
-| Code | Explanation |
-|---|---|
-| `<header>` | Page ka top part, usually logo/title/navigation. |
-| `<h1>` | Page ka main title. Usually ek page mein one main `h1` best hota hai. |
-| `<nav>` | Navigation links group karta hai. |
-| `<a href="...">` | Link create karta hai. `href` destination file/page batata hai. |
-| `<main>` | Main unique content rakhta hai. |
-| `<section>` | Related content group karta hai. |
-| `<article>` | Independent content block. Blog post, news item, card, etc. |
-| `<footer>` | Bottom area, copyright/contact/social links. |
-
-## Small Practical 2: Convert Div Layout to Semantic Layout
-
-### Objective
-
-Learners ko yeh samjhana ki generic `<div>` se page ban sakta hai, lekin semantic tags se page ka meaning clear hota hai. Browser output similar dikh sakta hai, but code quality, accessibility aur SEO semantic tags se better hoti hai.
-
-Students ko pehle yeh show karo:
-
-```html
-<div>
-  <h1>Website</h1>
-</div>
-<div>
-  <p>Main content</p>
-</div>
-<div>
-  <p>Footer</p>
-</div>
-```
-
-Then semantic version:
-
-```html
-<header>
-  <h1>Website</h1>
-</header>
-<main>
-  <p>Main content</p>
-</main>
-<footer>
-  <p>Footer</p>
-</footer>
-```
-
-### What Students Should Compare
-
-- Dono code browser mein almost same text show kar sakte hain.
-- Semantic version padhne mein easy hai.
-- Screen reader aur search engine ko semantic version better samajh aata hai.
-- Team project mein semantic code maintain karna easy hota hai.
-
-### Learning Outcome
-
-Students samjhenge ki dono browser mein similar dikh sakte hain, lekin semantic version meaningfully better hai. HTML sirf output ke liye nahi, meaning aur structure ke liye bhi likha jaata hai.
-
----
-
-# 3. Forms and Input Validation
-
-## Starting Theory
-
-Forms website ka important part hain because forms user se data collect karte hain. Login form, signup form, contact form, search bar, feedback form, payment form - sab forms ke examples hain.
-
-Input validation ka matlab user ke input ko check karna. Agar required field blank hai, email format galat hai, password short hai, ya number range galat hai, toh form submit nahi hona chahiye.
-
-HTML5 built-in validation provide karta hai, jaise `required`, `type="email"`, `minlength`, `maxlength`, `min`, `max`, `pattern`.
-
-## Contact Form Example
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Form</title>
-</head>
-<body>
-  <main>
-    <h1>Contact Us</h1>
-
-    <form>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
-  </main>
-</body>
-</html>
-```
-
-## Line-by-Line Explanation
-
-| Code | Explanation |
-|---|---|
-| `<form>` | Form area start karta hai. User input fields isi ke andar hote hain. |
-| `<label for="name">` | Input ka label. `for="name"` input ke `id="name"` se connect hota hai. |
-| `<input type="text"...>` | Text input field create karta hai. |
-| `id="name"` | Unique ID. Label connect karne and JS/CSS targeting ke liye useful. |
-| `name="name"` | Form submit hone par field ka key/name hota hai. |
-| `required` | Field blank nahi chhod sakte. Browser validation karega. |
-| `type="email"` | Email format validation automatically karta hai. |
-| `<textarea>` | Long message input ke liye. |
-| `rows="5"` | Textarea ki height approximate 5 rows. |
-| `<button type="submit">` | Form submit button. |
-
-## Small Practical 3: Form Validation Test
-
-### Objective
-
-Students ko form validation ka practical feel dena. Yeh samjhana ki browser HTML attributes jaise `required` aur `type="email"` ke basis par basic validation automatically kar sakta hai.
-
-1. Contact form browser mein open karo.
-2. Name blank chhodkar submit karo.
-3. Browser required field warning show karega.
-4. Email field mein `abc` likho and submit karo.
-5. Browser valid email maangega.
-
-### Expected Browser Behavior
-
-- Required field blank hone par browser message show karega.
-- Invalid email likhne par browser email format correct karne ko bolega.
-- Form tab tak submit nahi hoga jab tak required fields valid na ho.
-
-### Learning Outcome
-
-Students samjhenge ki HTML5 without JavaScript bhi basic validation kar sakta hai. Lekin real applications mein backend validation bhi zaroori hoti hai, kyunki frontend validation user bypass kar sakta hai.
-
-## More Input Types
-
-| Input Type | Use |
-|---|---|
-| `text` | Normal text |
-| `email` | Email validation |
-| `password` | Password hidden input |
-| `number` | Numeric input |
-| `date` | Date picker |
-| `radio` | Single choice |
-| `checkbox` | Multiple choice |
-| `file` | File upload |
-
-## Signup Form Practical
-
-```html
-<form>
-  <label for="username">Username</label>
-  <input type="text" id="username" name="username" minlength="3" required>
-
-  <label for="password">Password</label>
-  <input type="password" id="password" name="password" minlength="6" required>
-
-  <label for="age">Age</label>
-  <input type="number" id="age" name="age" min="18" max="60">
-
-  <button type="submit">Create Account</button>
-</form>
-```
-
-## Code Explanation
-
-| Code | Explanation |
-|---|---|
-| `minlength="3"` | Username minimum 3 characters hona chahiye. |
-| `type="password"` | Password characters hide karta hai. |
-| `minlength="6"` | Password minimum 6 characters. |
-| `type="number"` | Number input field. |
-| `min="18"` | Minimum age 18. |
-| `max="60"` | Maximum age 60. |
-
----
-
-# 4. Tables, Lists, Images and Media
-
-## Starting Theory
-
-Web page par content sirf paragraph nahi hota. Kabhi humein data table mein dikhana hota hai, kabhi points list mein, kabhi image show karni hoti hai, kabhi audio/video add karna hota hai.
-
-HTML content ko structured format mein show karne ke liye tags provide karta hai.
-
-## Lists
-
-### Unordered List
-
-```html
-<ul>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-</ul>
-```
-
-Explanation:
-
-| Code | Explanation |
-|---|---|
-| `<ul>` | Unordered list. Bullets show karta hai. |
-| `<li>` | List item. Har item ke liye use hota hai. |
-
-### Ordered List
-
-```html
-<ol>
-  <li>Create folder</li>
-  <li>Create HTML file</li>
-  <li>Open in browser</li>
-</ol>
-```
-
-`<ol>` numbering show karta hai.
-
-## Tables
-
-```html
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Course</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Aman</td>
-      <td>MERN Stack</td>
-    </tr>
-    <tr>
-      <td>Priya</td>
-      <td>HTML5</td>
-    </tr>
-  </tbody>
-</table>
-```
-
-## Table Code Explanation
-
-| Code | Explanation |
-|---|---|
-| `<table>` | Table start karta hai. |
-| `<thead>` | Table header group. |
-| `<tr>` | Table row. |
-| `<th>` | Header cell. Bold/heading style hoti hai. |
-| `<tbody>` | Main table body. |
-| `<td>` | Normal table data cell. |
-
-## Images
-
-```html
-<img src="student.jpg" alt="Student learning HTML" width="300">
-```
-
-Explanation:
-
-| Code | Explanation |
-|---|---|
-| `<img>` | Image show karta hai. |
-| `src="student.jpg"` | Image file path. |
-| `alt="..."` | Image load na ho ya screen reader use ho toh text description. |
-| `width="300"` | Image width set karta hai. |
-
-## Media: Video
-
-```html
-<video controls width="400">
-  <source src="intro.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-```
-
-Explanation:
-
-| Code | Explanation |
-|---|---|
-| `<video>` | Video player create karta hai. |
-| `controls` | Play/pause controls show karta hai. |
-| `<source>` | Video file and type define karta hai. |
-| Fallback text | Agar browser support na kare toh message show hota hai. |
-
-## Small Practical 4: Profile Page with List, Table and Image
-
-Create `profile.html`:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Profile</title>
-</head>
-<body>
-  <main>
-    <h1>Student Profile</h1>
-
-    <img src="student.jpg" alt="Student profile photo" width="200">
-
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
-
-    <h2>Course Details</h2>
-    <table>
-      <tr>
-        <th>Course</th>
-        <th>Duration</th>
-      </tr>
-      <tr>
-        <td>MERN Stack</td>
-        <td>6 Months</td>
-      </tr>
-    </table>
-  </main>
-</body>
-</html>
-```
-
-### Practical Explanation
-
-This page combines multiple HTML concepts. Image shows profile photo, list shows skills, and table shows structured course details. Learners can see how different tags are used for different content types.
-
----
-
-# 5. Accessibility Best Practices
-
-## Starting Theory
-
-Accessibility ka matlab website ko sab users ke liye usable banana, including users with disabilities. Some users screen reader use karte hain, kuch users keyboard se navigate karte hain, kuch users low vision ke saath website use karte hain.
-
-Good HTML accessibility ka start semantic tags, proper labels, alt text, readable headings, and keyboard-friendly structure se hota hai.
-
-## Important Accessibility Rules
-
-| Rule | Why Important |
-|---|---|
-| Images mein `alt` use karo | Screen reader image ka meaning read kar sake |
-| Form inputs ke saath `label` use karo | User ko field ka purpose clear ho |
-| Headings order follow karo | Page structure clear hota hai |
-| Buttons actual `<button>` se banao | Keyboard and screen reader support better |
-| Links meaningful rakho | `Click here` ke badle clear text use karo |
-
-## Bad vs Good Example
-
-Bad:
-
-```html
-<input type="text">
-```
-
-Good:
-
-```html
-<label for="fullName">Full Name</label>
-<input type="text" id="fullName" name="fullName">
+7. Is folder mein later image/video rakhenge.
+
+## Expected Folder View
+
+```text
+portfolio-site/
+  index.html
+  about.html
+  projects.html
+  contact.html
+  media/
 ```
 
 ## Explanation
 
-Label se user ko input ka meaning samajh aata hai. Screen reader bhi label read kar sakta hai. Accessibility ke liye form fields ko labels ke saath connect karna best practice hai.
-
-## Small Practical 5: Accessibility Check
-
-Students apne form mein check karein:
-
-- Har input ka label hai?
-- Har image ka alt text hai?
-- Page mein one clear `h1` hai?
-- Navigation links meaningful hain?
-
----
-
-# 6. SEO-Friendly HTML Layouts
-
-## Starting Theory
-
-SEO ka full form Search Engine Optimization hai. SEO-friendly HTML ka matlab aisa structure banana jise search engines easily understand kar sakein.
-
-Search engines page ke headings, title, meta description, links, image alt text, and semantic tags ko read karte hain. Agar HTML structure clear hai, toh search engine ko page ka topic samajhne mein help milti hai.
-
-## SEO Basics
-
-| Element | Use |
+| Item | Explanation |
 |---|---|
-| `<title>` | Browser tab and search result title |
-| `<meta name="description">` | Page summary for search engines |
-| One `<h1>` | Main topic |
-| Proper headings | Content hierarchy |
-| Semantic tags | Meaningful layout |
-| Image alt text | Image meaning |
-| Descriptive links | Clear navigation |
-
-## SEO-Friendly Head Example
-
-```html
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn HTML5 web page structure with simple examples and practical exercises.">
-  <title>HTML5 Web Page Structure Notes</title>
-</head>
-```
-
-## Code Explanation
-
-| Code | Explanation |
-|---|---|
-| `meta charset` | Text encoding set karta hai. |
-| `viewport` | Mobile responsiveness ke liye important. |
-| `meta description` | Search engine ko page summary deta hai. |
-| `title` | Browser tab and SEO title. |
-
-## Small Practical 6: Add SEO Tags
-
-Students apne `index.html` ke `<head>` mein meta description add karein:
-
-```html
-<meta name="description" content="This is my first HTML5 learning page.">
-```
-
-Browser par direct visual change nahi dikhega, but page metadata improve hoga.
+| `portfolio-site` | Main project folder |
+| `index.html` | Home page; browser usually index page ko starting page maanta hai |
+| `about.html` | About page |
+| `projects.html` | Projects page |
+| `contact.html` | Contact form page |
+| `media` | Images/videos store karne ke liye folder |
 
 ---
 
-# 7. Cross-Browser Compatibility Basics
+# Step 2: Build the Home Page with HTML5 Document Structure
 
-## Starting Theory
+## Theory
 
-Cross-browser compatibility ka matlab website Chrome, Firefox, Safari, Edge jaise different browsers mein properly work kare. Har browser rendering engine slightly different ho sakta hai, isliye developer ko basic standards follow karne chahiye.
+Har HTML5 page ek basic structure follow karta hai. Is structure se browser ko samajh aata hai ki document HTML5 hai, page ki language kya hai, character encoding kya hai, mobile screen ke liye layout kaise behave karega, aur visible content kahan hai.
 
-HTML5 standard tags use karne se compatibility improve hoti hai. Outdated tags avoid karne chahiye. Modern CSS/JS features use karte time browser support check karna chahiye.
-
-## Basic Rules
-
-| Rule | Meaning |
-|---|---|
-| Use valid HTML | Browser errors kam honge |
-| Use semantic tags | Structure clear rahega |
-| Add viewport meta tag | Mobile layout better |
-| Test in multiple browsers | Issues jaldi milte hain |
-| Avoid outdated tags | Modern standards follow karo |
-
-## Small Practical 7: Test Same Page in Two Browsers
-
-1. `index.html` Chrome mein open karo.
-2. Same file Safari/Firefox/Edge mein open karo.
-3. Output compare karo.
-4. Check karo heading, form, image, table same dikh rahe hain ya nahi.
-
-### Learning Outcome
-
-Students samjhenge ki developer ko sirf apne browser mein nahi, multiple browsers mein output check karna chahiye.
-
----
-
-
----
-
-# Deep Explanation: Important HTML Tags Learners Must Understand
-
-## Heading Tags: `h1` to `h6`
-
-HTML mein headings content hierarchy banati hain. `h1` sabse important heading hoti hai. `h2` subheading hoti hai. `h3` uske andar smaller heading hoti hai. Headings sirf text bada karne ke liye use nahi karni chahiye. Headings ka real purpose page structure define karna hai.
-
-Example:
-
-```html
-<h1>Learning Academy</h1>
-<h2>Courses</h2>
-<h3>HTML Course</h3>
-```
-
-Meaning:
+HTML page mainly do parts mein divide hota hai:
 
 ```text
-Website/page main topic = Learning Academy
-Section topic = Courses
-Sub-topic = HTML Course
+head = page information, SEO, title, metadata
+body = visible content jo user ko browser mein dikhta hai
 ```
 
-Good heading order accessibility aur SEO dono ke liye useful hota hai.
+`head` section directly page par visible nahi hota, lekin browser and search engines ke liye important hota hai. `body` section mein headings, paragraphs, navigation, images, forms, etc. visible content hota hai.
 
-## Paragraph Tag: `p`
-
-Paragraph normal text content ke liye use hota hai. Agar learners long explanation likhna chahte hain, toh `<p>` tag use karein.
-
-```html
-<p>HTML is used to create the structure of a web page.</p>
-```
-
-Browser paragraph ko normal readable text ke form mein show karta hai.
-
-## Link Tag: `a`
-
-Anchor tag links create karta hai. Multi-page website mein navigation links ke liye yeh very important hai.
-
-```html
-<a href="about.html">About Us</a>
-```
-
-Explanation:
-
-| Part | Meaning |
-|---|---|
-| `<a>` | Anchor/link tag |
-| `href="about.html"` | Link destination |
-| `About Us` | Clickable text |
-
-Agar `href` wrong file name dega, link click karne par page not found ho sakta hai.
-
-## Image Tag: `img`
-
-Image show karne ke liye `img` tag use hota hai. Image tag mein `src` and `alt` important attributes hain.
-
-```html
-<img src="images/classroom.jpg" alt="Students learning HTML in classroom">
-```
-
-`src` image ka path hai. `alt` image ka text description hai. Agar image load nahi hoti, alt text help karta hai. Screen reader users ke liye bhi alt text important hai.
-
-## Button Tag: `button`
-
-Button user action ke liye use hota hai.
-
-```html
-<button type="submit">Submit</button>
-```
-
-Form ke andar submit button form submit karta hai. Normal button JavaScript actions ke liye use ho sakta hai.
-
-## Div vs Semantic Tags
-
-`div` generic container hai. Jab specific meaning wala tag available ho, semantic tag use karna better hai.
-
-| Generic | Better Semantic Option |
-|---|---|
-| `<div class="header">` | `<header>` |
-| `<div class="nav">` | `<nav>` |
-| `<div class="main">` | `<main>` |
-| `<div class="footer">` | `<footer>` |
-
----
-
-# More Small Practicals for Better Understanding
-
-## Practical 8: Create a Navigation Menu
-
-Create file: `nav-practice.html`
-
-```html
-<header>
-  <h1>My Website</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-```
-
-### Explanation
-
-This practical teaches navigation structure. `header` contains website title and navigation links. `nav` groups all links. Each `a` tag connects to another page. In a multi-page website, this same navigation should be used on all pages.
-
-## Practical 9: Create an Accessible Image Section
-
-```html
-<section>
-  <h2>Our Classroom</h2>
-  <img src="images/classroom.jpg" alt="Students sitting in classroom and learning HTML" width="400">
-  <p>This is our web development classroom.</p>
-</section>
-```
-
-### Explanation
-
-This section uses semantic `section`, proper heading, image with descriptive alt text, and paragraph. This is better than placing image alone without context.
-
-## Practical 10: Build a Course List
-
-```html
-<section>
-  <h2>Available Courses</h2>
-  <ul>
-    <li>HTML5 Basics</li>
-    <li>CSS Styling</li>
-    <li>JavaScript Fundamentals</li>
-  </ul>
-</section>
-```
-
-### Explanation
-
-List is used because courses are multiple related items. `ul` creates bullet list and `li` creates each list item. This is better than writing all courses in one paragraph because list is easier to read.
-
-## Practical 11: Create a Basic Fees Table
-
-```html
-<table>
-  <tr>
-    <th>Course</th>
-    <th>Duration</th>
-    <th>Fees</th>
-  </tr>
-  <tr>
-    <td>HTML5</td>
-    <td>1 Week</td>
-    <td>Free</td>
-  </tr>
-</table>
-```
-
-### Explanation
-
-Table is useful when data has rows and columns. Here course, duration and fees are related data columns. `th` is used for headings and `td` is used for normal data cells.
-
-## Practical 12: Form With Different Inputs
-
-```html
-<form>
-  <label for="fullName">Full Name</label>
-  <input type="text" id="fullName" name="fullName" required>
-
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required>
-
-  <label for="joiningDate">Joining Date</label>
-  <input type="date" id="joiningDate" name="joiningDate">
-
-  <button type="submit">Register</button>
-</form>
-```
-
-### Explanation
-
-This practical shows text input, email input, date input and submit button. Labels are connected with inputs using `for` and `id`. This improves accessibility and form usability.
-
----
-
-# 8. Project 2: Multi-Page Static Website
-
-## Project Objective
-
-Is project mein learners 4-5 page static website create karenge. Website semantic HTML use karegi, forms with validation use karegi, images/lists/tables use karegi, accessibility rules follow karegi, and SEO basics include karegi.
-
-## Suggested Website Pages
-
-```text
-index.html      -> Home page
-about.html      -> About page
-courses.html    -> Courses page
-gallery.html    -> Gallery page
-contact.html    -> Contact form page
-```
-
-## Folder Structure
-
-```text
-multi-page-website/
-  index.html
-  about.html
-  courses.html
-  gallery.html
-  contact.html
-  images/
-    student.jpg
-    classroom.jpg
-```
-
-## Common Navigation Code
-
-Har page mein same navigation use karo:
-
-```html
-<header>
-  <h1>Learning Academy</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="courses.html">Courses</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-```
-
-## Navigation Code Explanation
-
-| Code | Explanation |
-|---|---|
-| `<header>` | Page ka top section. |
-| `<h1>` | Website title. |
-| `<nav>` | Navigation links group. |
-| `<a href="index.html">` | Home page link. |
-| `<a href="contact.html">` | Contact page link. |
-
-## Home Page Example
+## Practical Code: `index.html`
 
 ```html
 <!DOCTYPE html>
@@ -1002,181 +137,590 @@ Har page mein same navigation use karo:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learning Academy provides beginner-friendly web development courses.">
-  <title>Learning Academy - Home</title>
+  <meta name="description" content="Beginner portfolio website created using HTML5 semantic structure.">
+  <title>My Portfolio - Home</title>
 </head>
 <body>
   <header>
-    <h1>Learning Academy</h1>
+    <h1>My Portfolio</h1>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="courses.html">Courses</a>
-      <a href="gallery.html">Gallery</a>
+      <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
     <section>
-      <h2>Welcome to Learning Academy</h2>
-      <p>We teach web development from basic to advanced level.</p>
-    </section>
-
-    <section>
-      <h2>Why Choose Us?</h2>
-      <ul>
-        <li>Beginner-friendly teaching</li>
-        <li>Practical projects</li>
-        <li>Step-by-step learning</li>
-      </ul>
+      <h2>Welcome</h2>
+      <p>Hello, my name is Rahul. I am learning web development.</p>
+      <p>This portfolio website is created using HTML5.</p>
     </section>
   </main>
 
   <footer>
-    <p>Copyright 2026 - Learning Academy</p>
+    <p>Copyright 2026 - My Portfolio</p>
   </footer>
 </body>
 </html>
 ```
 
-## Home Page Code Explanation
+## How to Execute
 
-| Code | Explanation |
-|---|---|
-| `DOCTYPE` | HTML5 document define karta hai. |
-| `lang="en"` | Page language English. |
-| `meta description` | SEO ke liye page summary. |
-| `title` | Browser tab and search title. |
-| `header` | Website top area. |
-| `nav` | Multi-page links. |
-| `main` | Unique page content. |
-| `section` | Content groups. |
-| `ul/li` | Bullet list. |
-| `footer` | Bottom copyright area. |
+1. Code ko `index.html` mein paste karo.
+2. File save karo.
+3. File par right-click karo and browser mein open karo.
+4. Output mein title, navigation, welcome section and footer dikhna chahiye.
 
-## Contact Page Form Example
+## Expected Output
 
-```html
-<main>
-  <h2>Contact Us</h2>
+Browser page par yeh content dikhega:
 
-  <form>
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="course">Select Course</label>
-    <select id="course" name="course" required>
-      <option value="">Choose a course</option>
-      <option value="html">HTML5</option>
-      <option value="mern">MERN Stack</option>
-    </select>
-
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-
-    <button type="submit">Submit</button>
-  </form>
-</main>
+```text
+My Portfolio
+Home About Projects Contact
+Welcome
+Hello, my name is Rahul. I am learning web development.
+This portfolio website is created using HTML5.
+Copyright 2026 - My Portfolio
 ```
 
-## Contact Form Explanation
+## Line-by-Line Code Explanation
+
+| Line / Code | Detailed Explanation |
+|---|---|
+| `<!DOCTYPE html>` | Browser ko batata hai ki yeh HTML5 document hai. Isko top par likhna best practice hai. |
+| `<html lang="en">` | HTML document ka root element. `lang="en"` page language English set karta hai. Screen readers and SEO ke liye useful. |
+| `<head>` | Page ki information start hoti hai. Isme metadata, title, SEO info aati hai. |
+| `<meta charset="UTF-8">` | Text encoding set karta hai. Isse special characters and symbols properly show hote hain. |
+| `<meta name="viewport"...>` | Mobile responsive behavior ke liye important hai. Page device width ke according render hota hai. |
+| `<meta name="description"...>` | Search engines ko page ka short description deta hai. SEO-friendly layout ka part hai. |
+| `<title>` | Browser tab mein title show karta hai. Search result mein bhi use ho sakta hai. |
+| `<body>` | Visible page content yahan start hota hai. |
+| `<header>` | Page ka top section. Isme usually website title/logo and navigation hota hai. |
+| `<h1>` | Page ka main heading. Home page ka main identity title. |
+| `<nav>` | Navigation links ko group karta hai. Semantic HTML mein nav important hai. |
+| `<a href="index.html">Home</a>` | Anchor link. Click karne par `index.html` open hota hai. |
+| `<main>` | Page ka main unique content. Har page mein main section ideally ek hota hai. |
+| `<section>` | Related content ka group. Yahan welcome section banaya hai. |
+| `<h2>` | Section heading. `h1` ke baad subheading ke liye `h2` use hota hai. |
+| `<p>` | Paragraph text. Normal readable content ke liye use hota hai. |
+| `<footer>` | Page ka bottom area. Copyright, contact, links yahan aa sakte hain. |
+
+## Common Mistakes
+
+- `head` ke andar visible content likhna.
+- `body` close karna bhool jaana.
+- `href` mein wrong file name likhna.
+- `meta viewport` remove kar dena, jis se mobile layout issue ho sakta hai.
+
+## Mini Task
+
+`Rahul` ko apne naam se replace karo. Browser refresh karke output check karo.
+
+---
+
+# Step 3: Understand and Use Semantic HTML
+
+## Theory
+
+Semantic HTML ka matlab meaningful tags use karna. Agar hum har jagah `<div>` use karte hain, browser ko structure ka meaning clear nahi hota. Semantic tags jaise `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>` page ka meaning clear karte hain.
+
+Semantic HTML ke benefits:
+
+- Code readable hota hai.
+- Search engines page structure better samajhte hain.
+- Screen readers users ko better navigation dete hain.
+- Team project mein code maintain karna easy hota hai.
+
+## Semantic Tags Used in Our Portfolio
+
+| Semantic Tag | Portfolio Mein Use |
+|---|---|
+| `<header>` | Website title and navigation |
+| `<nav>` | Page links |
+| `<main>` | Main page content |
+| `<section>` | Content groups |
+| `<article>` | Individual project cards |
+| `<footer>` | Copyright info |
+
+## Practical Improvement
+
+Home page already semantic tags use kar raha hai. Ab hum same structure other pages mein repeat karenge. Multi-page static website mein navigation same rehna chahiye, taaki user pages ke beech move kar sake.
+
+## Why Same Navigation on All Pages?
+
+Agar `about.html` par user hai, usko home ya contact page par jaane ka option chahiye. Isliye same navigation har page mein copy karte hain.
+
+```html
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+</nav>
+```
+
+## Code Explanation
 
 | Code | Explanation |
 |---|---|
-| `<form>` | User input area. |
-| `label for` | Label ko input id se connect karta hai. |
-| `input type="text"` | Name input. |
-| `input type="email"` | Email validation. |
-| `<select>` | Dropdown create karta hai. |
-| `<option>` | Dropdown option. |
-| `<textarea>` | Long message field. |
-| `required` | Field blank nahi chhod sakte. |
-| `button type="submit"` | Form submit karta hai. |
+| `<nav>` | Navigation area define karta hai. |
+| `<a>` | Link create karta hai. |
+| `href="about.html"` | Click karne par browser about page open karega. |
+| Link text | User ko visible text. Example: `About`. |
 
-## Project Checklist
+## Mini Task
 
-| Requirement | Done |
-|---|---|
-| 4-5 pages created |  |
-| Same navigation on all pages |  |
-| Semantic tags used |  |
-| Contact form with validation |  |
-| Images with alt text |  |
-| Table/list used |  |
-| Meta description added |  |
-| Page titles proper |  |
-| Tested in browser |  |
+Home page ke navigation links click karo. Abhi pages blank ya basic honge, but browser URL change hoga. Yeh show karta hai ki links file navigation ke liye use hote hain.
 
 ---
 
-# 9. Quick Revision
+# Step 4: Build About Page with Lists, Table and Image
 
-| Topic | Meaning |
+## Theory
+
+About page learner ke profile, skills and education details show karega. Is page mein hum lists, tables and images use karenge.
+
+List ka use tab karte hain jab related points show karne ho. Example: skills, hobbies, services. Table ka use tab karte hain jab data rows and columns mein ho. Example: education details, course fees, timetable. Image ka use visual identity ke liye hota hai, but image ke saath `alt` text accessibility ke liye important hai.
+
+## Practical Code: `about.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About page of a beginner portfolio website with skills and education details.">
+  <title>My Portfolio - About</title>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <img src="media/profile.jpg" alt="Profile photo of Rahul" width="200">
+      <p>I am a beginner web developer learning HTML, CSS, JavaScript and MERN stack.</p>
+    </section>
+
+    <section>
+      <h2>My Skills</h2>
+      <ul>
+        <li>HTML5 Web Page Structure</li>
+        <li>Semantic HTML</li>
+        <li>Basic Forms</li>
+        <li>Web Accessibility Basics</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education Details</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Institute</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MERN Stack</td>
+            <td>Learning Academy</td>
+            <td>2026</td>
+          </tr>
+          <tr>
+            <td>HTML5 Basics</td>
+            <td>Online Practice</td>
+            <td>2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright 2026 - My Portfolio</p>
+  </footer>
+</body>
+</html>
+```
+
+## How to Execute
+
+1. Code ko `about.html` mein paste karo.
+2. `media` folder mein `profile.jpg` naam ki image rakho.
+3. File save karo.
+4. Browser mein `about.html` open karo.
+5. Image, skills list and education table show hone chahiye.
+
+## Expected Output
+
+Page par:
+
+- About Me section
+- Profile image
+- Paragraph intro
+- Skills bullet list
+- Education table
+- Header and footer
+
+## Detailed Code Explanation
+
+| Code | Explanation |
 |---|---|
-| HTML | Web page structure language |
-| HTML5 | Modern HTML version |
-| Semantic Tags | Meaningful layout tags |
-| Form | User input collection |
-| Validation | Input checking |
-| Table | Rows and columns data |
-| List | Ordered/unordered points |
-| Image Alt | Image description |
-| Accessibility | Website usable for all users |
-| SEO | Search engine friendly structure |
-| Cross-browser | Works in different browsers |
-| Static Website | Fixed files based website |
+| `<img src="media/profile.jpg"...>` | Image show karta hai. `src` image path hai. |
+| `alt="Profile photo of Rahul"` | Image description. Accessibility ke liye important. Agar image load na ho toh yeh text useful hota hai. |
+| `width="200"` | Image width 200 pixels set karta hai. |
+| `<ul>` | Unordered list start. Skills bullet points ke liye use. |
+| `<li>` | List item. Har skill ek list item hai. |
+| `<table>` | Table start. Rows and columns data ke liye. |
+| `<thead>` | Table heading group. |
+| `<tr>` | Table row. |
+| `<th>` | Table heading cell. |
+| `<tbody>` | Table main data group. |
+| `<td>` | Table data cell. |
+
+## Why These Tags Are Used?
+
+Skills paragraph mein bhi likh sakte the, but list better hai because skills separate points hain. Education plain text mein bhi likh sakte the, but table better hai because course, institute and year structured columns hain. Image ke saath alt text use kiya because accessibility best practice hai.
+
+## Common Mistakes
+
+- Image file ka naam wrong likhna.
+- `media` folder ke bahar image rakhna but path `media/profile.jpg` dena.
+- `<tr>` ke andar directly text likhna instead of `<td>` or `<th>`.
+- List item ke liye `<li>` bhool jaana.
+
+## Mini Task
+
+Skills list mein 2 new skills add karo. Table mein ek new row add karo.
 
 ---
 
-# 10. Day 2 Practice Tasks
+# Step 5: Build Projects Page with Articles and Media
 
-## Task 1
+## Theory
 
-Create one `index.html` page with:
+Projects page portfolio ka important part hota hai. Is page par learner apne projects show karega. Har project independent content block hai, isliye `<article>` tag use karna meaningful hai.
 
-- Proper HTML5 skeleton
-- Header
-- Navigation
-- Main content
-- Footer
+Media ka use website ko more informative banata hai. HTML5 directly video and audio support karta hai. Video use karte time `controls` attribute important hota hai, warna user play/pause controls nahi dekh paayega.
 
-## Task 2
+## Practical Code: `projects.html`
 
-Create a contact form with:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects page showing beginner HTML5 portfolio projects.">
+  <title>My Portfolio - Projects</title>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
 
-- Name
-- Email
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>My Projects</h2>
+
+      <article>
+        <h3>Portfolio Website</h3>
+        <p>This project is a multi-page static website created using HTML5.</p>
+      </article>
+
+      <article>
+        <h3>Contact Form Page</h3>
+        <p>This project uses HTML5 forms and input validation.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Project Demo Video</h2>
+      <video controls width="400">
+        <source src="media/intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright 2026 - My Portfolio</p>
+  </footer>
+</body>
+</html>
+```
+
+## How to Execute
+
+1. Code ko `projects.html` mein paste karo.
+2. Optional: `media` folder mein `intro.mp4` video rakho.
+3. Browser mein `projects.html` open karo.
+4. Project articles and video section observe karo.
+
+## Expected Output
+
+Page par projects list article style mein dikhegi. Agar video file available hai, browser video player show karega. Agar video file missing hai, video load nahi hoga, but page structure still visible rahega.
+
+## Detailed Code Explanation
+
+| Code | Explanation |
+|---|---|
+| `<article>` | Independent project block. Har project apne aap mein complete information hai. |
+| `<h3>` | Project title. Since section heading `h2` hai, project heading `h3` use ki. |
+| `<video controls width="400">` | Video player create karta hai. `controls` play/pause controls show karta hai. |
+| `<source src="media/intro.mp4"...>` | Video file path and type define karta hai. |
+| `type="video/mp4"` | Browser ko batata hai file MP4 video hai. |
+| Fallback text | Agar browser video support nahi karta toh message show hota hai. |
+
+## Why `article` Is Better Here?
+
+Project cards independent content blocks hain. Har project ka title and description hai. Isliye `article` semantic tag meaningful hai. Agar sirf generic `div` use karte, code visually same ho sakta tha, but meaning less clear hota.
+
+## Common Mistakes
+
+- `controls` attribute miss karna.
+- Video file path wrong dena.
+- Heading order break karna, jaise `h2` ke baad directly `h5` use karna.
+- Article ke andar heading na dena.
+
+## Mini Task
+
+Ek third project article add karo:
+
+```text
+Project Name: HTML Table Practice
+Description: This project displays course information using an HTML table.
+```
+
+---
+
+# Step 6: Build Contact Page with Form and Validation
+
+## Theory
+
+Forms user input collect karne ke liye use hote hain. Contact form, login form, signup form, feedback form, search form - sab form examples hain.
+
+HTML5 form validation browser level par basic checking provide karta hai. `required` blank field prevent karta hai. `type="email"` email format validate karta hai. `minlength` minimum characters ensure karta hai. Lekin real applications mein backend validation bhi zaroori hoti hai, because frontend validation bypass ho sakti hai.
+
+## Practical Code: `contact.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact page with HTML5 form validation.">
+  <title>My Portfolio - Contact</title>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Contact Me</h2>
+
+      <form>
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" minlength="3" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="course">Interested Course</label>
+        <select id="course" name="course" required>
+          <option value="">Select a course</option>
+          <option value="html">HTML5</option>
+          <option value="mern">MERN Stack</option>
+          <option value="javascript">JavaScript</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" minlength="10" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright 2026 - My Portfolio</p>
+  </footer>
+</body>
+</html>
+```
+
+## How to Execute
+
+1. Code ko `contact.html` mein paste karo.
+2. Browser mein `contact.html` open karo.
+3. Blank form submit karne ki koshish karo.
+4. Browser required field validation show karega.
+5. Email field mein `abc` likho and submit karo.
+6. Browser valid email maangega.
+7. Message mein 10 characters se kam likho and submit karo.
+8. Browser minlength validation show karega.
+
+## Expected Output
+
+Contact page par form fields dikhenge:
+
+- Full Name
+- Email Address
+- Interested Course dropdown
 - Message
-- Required validation
+- Send Message button
 
-## Task 3
+Validation test karne par browser error messages show karega.
 
-Create a course table with:
+## Detailed Code Explanation
 
-- Course name
-- Duration
-- Fees
+| Code | Explanation |
+|---|---|
+| `<form>` | Form area create karta hai. User input fields isi ke andar hote hain. |
+| `<label for="fullName">` | Label input se connect hota hai. `for` value input ke `id` se match honi chahiye. |
+| `<input type="text"...>` | Normal text input for name. |
+| `minlength="3"` | User ko at least 3 characters enter karne honge. |
+| `required` | Field blank nahi chhod sakte. |
+| `<input type="email"...>` | Email input. Browser email format check karta hai. |
+| `<select>` | Dropdown field create karta hai. |
+| `<option value="">` | Default empty option. Required validation ke liye useful. |
+| `<textarea>` | Long message input ke liye. |
+| `rows="5"` | Textarea height approx 5 rows. |
+| `minlength="10"` | Message at least 10 characters ka hona chahiye. |
+| `<button type="submit">` | Form submit button. |
 
-## Task 4
+## Accessibility Explanation
 
-Create a multi-page website with:
+Labels form accessibility ke liye very important hain. Agar user label par click kare, connected input focus ho jaata hai. Screen reader users ko bhi field ka purpose samajh aata hai.
 
-- Home
-- About
-- Courses
-- Gallery
-- Contact
+## Common Mistakes
 
-## Task 5
+- Label ka `for` and input ka `id` mismatch kar dena.
+- Required field miss kar dena.
+- Email field ko `type="text"` rakh dena.
+- Dropdown ka default option value empty na rakhna.
 
-Check accessibility:
+## Mini Task
 
-- Labels added
-- Image alt text added
-- Heading order correct
-- Links meaningful
+Form mein phone number field add karo:
+
+```html
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone">
+```
+
+---
+
+# Step 7: Accessibility, SEO and Cross-Browser Checklist
+
+## Theory
+
+Website sirf visually good nahi honi chahiye. Website accessible, SEO-friendly and different browsers mein workable honi chahiye.
+
+Accessibility ka matlab website sab users ke liye usable ho. SEO ka matlab search engines page ko easily understand kar sakein. Cross-browser compatibility ka matlab page Chrome, Firefox, Safari, Edge mein properly open ho.
+
+## Accessibility Checklist
+
+| Rule | Our Portfolio Example |
+|---|---|
+| One clear `h1` | `My Portfolio` |
+| Labels for inputs | Contact form labels |
+| Alt text for images | Profile image alt |
+| Semantic tags | Header, nav, main, section, footer |
+| Meaningful links | Home, About, Projects, Contact |
+
+## SEO Checklist
+
+| SEO Rule | Our Portfolio Example |
+|---|---|
+| Proper title | `My Portfolio - Home` |
+| Meta description | Added in every page |
+| Heading hierarchy | h1, h2, h3 order |
+| Semantic layout | main, section, article |
+| Image alt text | Profile image description |
+
+## Cross-Browser Testing Steps
+
+1. `index.html` Chrome mein open karo.
+2. Same file Safari/Firefox/Edge mein open karo.
+3. Navigation links test karo.
+4. Image load check karo.
+5. Form validation test karo.
+6. Table/list/video output check karo.
+
+## Practical Output
+
+If everything is correct:
+
+- All pages open properly.
+- Navigation links work.
+- Contact form validation works.
+- Image alt text is present.
+- Page titles are meaningful.
+- Layout basic but readable.
+
+---
+
+# Final Project Checklist
+
+| Requirement | Completed |
+|---|---|
+| `index.html` created |  |
+| `about.html` created |  |
+| `projects.html` created |  |
+| `contact.html` created |  |
+| Same navigation on all pages |  |
+| HTML5 structure used |  |
+| Semantic tags used |  |
+| Skills list added |  |
+| Education table added |  |
+| Image with alt text added |  |
+| Video/media tag used |  |
+| Contact form created |  |
+| Form validation added |  |
+| Meta description added |  |
+| Browser testing done |  |
+
+---
+
+# Final Learning Summary
+
+In this module, learner created a basic multi-page portfolio website using HTML5. This project covered all important HTML5 structure topics in one continuous flow. Learner started with `index.html`, then created about, projects and contact pages. During the project, learner used semantic tags, navigation, lists, tables, images, media, forms, validation, accessibility and SEO basics.
+
+The most important learning is that HTML gives structure to a webpage. Semantic HTML gives meaning to that structure. Forms collect user input. Validation improves input quality. Accessibility makes the website usable for more people. SEO-friendly HTML helps search engines understand the page. Cross-browser testing makes sure the page works for different users.
+
+After completing this module, learner will have a basic portfolio website and a strong foundation for CSS, JavaScript and MERN stack development.
 
