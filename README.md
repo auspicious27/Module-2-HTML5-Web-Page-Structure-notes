@@ -694,6 +694,447 @@ If everything is correct:
 
 ---
 
+# Step 8: Final Beautiful Portfolio Code Pack
+
+## Why This Final Code Pack Is Added
+
+Ab tak humne topic-wise pages banaye. Ab is section mein same portfolio website ka final polished version diya gaya hai. Iska purpose hai ki learner ke paas ek clean, readable, properly formatted, semantic HTML portfolio website ka final reference ho.
+
+Is section mein code thoda more professional structure mein hai. Har page mein same header, same navigation, proper `main`, meaningful `section`, proper headings, accessibility attributes, SEO meta description, and clean footer use kiya gaya hai.
+
+Important: Ye abhi bhi HTML-focused project hai. Isme CSS styling intentionally add nahi ki gayi, kyunki Module 2 ka focus HTML5 structure hai. CSS next modules mein add ho sakti hai. Lekin HTML structure clean aur beautiful rakha gaya hai, taaki CSS add karna easy ho.
+
+---
+
+## Final Page 1: `index.html`
+
+### Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rahul's beginner portfolio website created with semantic HTML5.">
+  <title>Rahul Portfolio | Home</title>
+</head>
+<body>
+  <header>
+    <h1>Rahul Sharma</h1>
+    <p>Beginner Web Developer learning HTML5 and MERN Stack.</p>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Welcome to My Portfolio</h2>
+      <p>This website is created using HTML5 semantic tags.</p>
+      <p>Here you can learn about my skills, projects, and contact details.</p>
+    </section>
+
+    <section>
+      <h2>What I Am Learning</h2>
+      <ul>
+        <li>HTML5 page structure</li>
+        <li>Semantic web layout</li>
+        <li>Forms and validation</li>
+        <li>Accessibility and SEO basics</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Rahul Sharma. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+```
+
+### How to Execute
+
+1. VS Code mein `index.html` file open karo.
+2. Upar wala code paste karo.
+3. File save karo.
+4. Browser mein `index.html` open karo.
+5. Output mein name, intro, navigation links, welcome section, learning list and footer dikhna chahiye.
+
+### Every Line Explanation
+
+| Line / Code | Detailed Simple Hinglish Explanation |
+|---|---|
+| `<!DOCTYPE html>` | Browser ko batata hai ki yeh HTML5 document hai. Yeh line browser ko modern HTML mode mein page read karne mein help karti hai. |
+| `<html lang="en">` | Complete HTML document yahan se start hota hai. `lang="en"` batata hai page English language mein hai. Accessibility and SEO ke liye useful. |
+| `<head>` | Head section page ki information rakhta hai. Yeh content direct page body mein visible nahi hota. |
+| `<meta charset="UTF-8">` | Character encoding set karta hai. Isse normal text, symbols, special characters correctly show hote hain. |
+| `<meta name="viewport"...>` | Mobile responsive behavior ke liye important hai. Browser ko bolta hai page device width ke according adjust ho. |
+| `<meta name="description"...>` | Search engines ko page ka short summary deta hai. Yeh SEO-friendly HTML ka part hai. |
+| `<title>Rahul Portfolio \| Home</title>` | Browser tab mein title show karta hai. Search result mein bhi title ka role hota hai. |
+| `</head>` | Head section close karta hai. |
+| `<body>` | Visible page content yahan start hota hai. User browser mein isi section ka output dekhta hai. |
+| `<header>` | Page ka top section. Isme name, intro and navigation rakhe gaye hain. |
+| `<h1>Rahul Sharma</h1>` | Page ka main heading. Portfolio owner ka name show karta hai. |
+| `<p>Beginner Web Developer...</p>` | Short intro paragraph. Visitor ko immediately page owner ka context milta hai. |
+| `<nav aria-label="Main navigation">` | Navigation section create karta hai. `aria-label` screen reader users ko batata hai ki yeh main navigation hai. |
+| `<a href="index.html">Home</a>` | Home page link. Click karne par browser `index.html` open karta hai. |
+| `<a href="about.html">About</a>` | About page link. Multi-page website navigation ka part. |
+| `<a href="projects.html">Projects</a>` | Projects page link. User project details page par ja sakta hai. |
+| `<a href="contact.html">Contact</a>` | Contact page link. User form page par ja sakta hai. |
+| `</nav>` | Navigation links ka group close hota hai. |
+| `</header>` | Header section close hota hai. |
+| `<main>` | Page ka main unique content yahan start hota hai. Har page mein main content alag hota hai. |
+| `<section>` | Related content ka section. Yahan welcome content group kiya gaya hai. |
+| `<h2>Welcome to My Portfolio</h2>` | Section heading. `h1` ke baad logical subheading ke liye `h2` use hota hai. |
+| `<p>This website...</p>` | Paragraph explain karta hai ki website semantic HTML5 se bani hai. |
+| `<p>Here you can...</p>` | Visitor ko batata hai website mein kya information milegi. |
+| `</section>` | Welcome section close hota hai. |
+| `<section>` | Second section start hota hai, jisme learning topics list hain. |
+| `<h2>What I Am Learning</h2>` | Section title. Iske neeche learning points aayenge. |
+| `<ul>` | Unordered list start. Jab points bullet form mein show karne ho tab use hota hai. |
+| `<li>HTML5 page structure</li>` | First list item. Learner ka topic show karta hai. |
+| `<li>Semantic web layout</li>` | Second list item. Semantic layout topic show karta hai. |
+| `<li>Forms and validation</li>` | Third list item. Forms topic show karta hai. |
+| `<li>Accessibility and SEO basics</li>` | Fourth list item. Accessibility and SEO topic show karta hai. |
+| `</ul>` | List close hoti hai. |
+| `</section>` | Learning section close hota hai. |
+| `</main>` | Main content close hota hai. |
+| `<footer>` | Page ka bottom section. Usually copyright/contact/extra links rakhe jaate hain. |
+| `<p>&copy; 2026 Rahul Sharma...</p>` | Copyright text. `&copy;` copyright symbol show karta hai. |
+| `</footer>` | Footer close hota hai. |
+| `</body>` | Visible body content close hota hai. |
+| `</html>` | Complete HTML document close hota hai. |
+
+---
+
+## Final Page 2: `about.html`
+
+### Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Rahul Sharma, his skills, education, and learning journey.">
+  <title>Rahul Portfolio | About</title>
+</head>
+<body>
+  <header>
+    <h1>About Rahul</h1>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Profile</h2>
+      <img src="media/profile.jpg" alt="Rahul Sharma smiling in a profile photo" width="220">
+      <p>I am learning web development step by step. My current focus is HTML5 web page structure.</p>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li>Creating HTML5 document structure</li>
+        <li>Using semantic HTML tags</li>
+        <li>Building accessible forms</li>
+        <li>Writing SEO-friendly HTML</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Institute</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MERN Stack Development</td>
+            <td>Learning Academy</td>
+            <td>2026</td>
+          </tr>
+          <tr>
+            <td>HTML5 Fundamentals</td>
+            <td>Self Practice</td>
+            <td>2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Rahul Sharma. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+```
+
+### How to Execute
+
+1. `about.html` file open karo.
+2. Code paste karo and save karo.
+3. `media` folder mein `profile.jpg` image rakho.
+4. Browser mein `about.html` open karo.
+5. Profile section, image, skills list and education table output check karo.
+
+### Every Line Explanation
+
+| Line / Code | Detailed Simple Hinglish Explanation |
+|---|---|
+| `<!DOCTYPE html>` | HTML5 document declaration. Browser ko correct mode mein render karne mein help karta hai. |
+| `<html lang="en">` | Page ka root element. `lang="en"` accessibility and SEO ke liye language define karta hai. |
+| `<head>` | Metadata section start. Page information yahan hoti hai. |
+| `<meta charset="UTF-8">` | Text encoding define karta hai. |
+| `<meta name="viewport"...>` | Mobile screen ke liye page scale set karta hai. |
+| `<meta name="description"...>` | About page ka SEO summary. Search engine ko page content samajhne mein help karta hai. |
+| `<title>Rahul Portfolio \| About</title>` | Browser tab title. User ko pata chalta hai yeh about page hai. |
+| `<body>` | Visible content start. |
+| `<header>` | Top area start. Isme heading and navigation hai. |
+| `<h1>About Rahul</h1>` | About page ka main heading. |
+| `<nav aria-label="Main navigation">` | Accessible navigation. Screen reader ko navigation ka purpose clear hota hai. |
+| `<a href="...">` | Har anchor tag ek page link create karta hai. |
+| `<main>` | Main content start. About page ka unique content yahan hai. |
+| `<section>` | Profile content group karne ke liye section. |
+| `<h2>Profile</h2>` | Profile section ka heading. |
+| `<img src="media/profile.jpg"...>` | Profile image load karta hai. `src` image location batata hai. |
+| `alt="Rahul Sharma smiling..."` | Image ka meaningful text description. Accessibility ke liye important. |
+| `width="220"` | Image ki display width set karta hai. |
+| `<p>I am learning...</p>` | Profile paragraph. Learner ke baare mein short introduction. |
+| `<section>` | Skills ke liye separate section start. |
+| `<h2>Skills</h2>` | Skills section heading. |
+| `<ul>` | Skills ko bullet list mein show karne ke liye unordered list. |
+| `<li>...</li>` | Har skill ek list item hai. |
+| `<section>` | Education table ke liye section. |
+| `<h2>Education</h2>` | Education section heading. |
+| `<table>` | Structured rows and columns data ke liye table start. |
+| `<thead>` | Table heading rows ko group karta hai. |
+| `<tr>` | Table row. |
+| `<th>` | Table header cell. Column ka title show karta hai. |
+| `<tbody>` | Table ka main data body. |
+| `<td>` | Normal table data cell. |
+| `</table>` | Table close karta hai. |
+| `<footer>` | Bottom section. |
+| `&copy;` | Copyright symbol render karta hai. |
+
+---
+
+## Final Page 3: `projects.html`
+
+### Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects created by Rahul Sharma while learning HTML5 and web development.">
+  <title>Rahul Portfolio | Projects</title>
+</head>
+<body>
+  <header>
+    <h1>My Projects</h1>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Featured Work</h2>
+
+      <article>
+        <h3>Portfolio Website</h3>
+        <p>A multi-page static portfolio created using semantic HTML5 tags.</p>
+      </article>
+
+      <article>
+        <h3>Contact Form Page</h3>
+        <p>A contact page using HTML5 form inputs and browser validation.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Demo Video</h2>
+      <video controls width="420">
+        <source src="media/intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Rahul Sharma. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+```
+
+### How to Execute
+
+1. `projects.html` file mein code paste karo.
+2. Optional video file `media/intro.mp4` add karo.
+3. Browser mein page open karo.
+4. Project articles and video player observe karo.
+
+### Every Line Explanation
+
+| Line / Code | Detailed Simple Hinglish Explanation |
+|---|---|
+| `<!DOCTYPE html>` | Browser ko HTML5 document type batata hai. |
+| `<html lang="en">` | Root HTML element with language. |
+| `<head>` | Page metadata start hota hai. |
+| `<meta charset="UTF-8">` | Character support ke liye encoding. |
+| `<meta name="viewport"...>` | Mobile-friendly page rendering ke liye. |
+| `<meta name="description"...>` | Projects page ka SEO description. |
+| `<title>Rahul Portfolio \| Projects</title>` | Browser tab mein projects page title. |
+| `<body>` | Visible content start. |
+| `<header>` | Page top area. |
+| `<h1>My Projects</h1>` | Projects page ka main heading. |
+| `<nav aria-label="Main navigation">` | Page links ka accessible navigation area. |
+| `<main>` | Projects page ka main content. |
+| `<section>` | Featured work group. |
+| `<h2>Featured Work</h2>` | Section heading. |
+| `<article>` | Independent project card. Article is useful because each project is a complete content item. |
+| `<h3>Portfolio Website</h3>` | Project title. |
+| `<p>A multi-page...</p>` | Project description. |
+| Second `<article>` | Dusra independent project block. |
+| `<section>` | Demo video ke liye separate section. |
+| `<video controls width="420">` | Video player create karta hai. `controls` play/pause UI show karta hai. |
+| `<source src="media/intro.mp4"...>` | Video file path and format define karta hai. |
+| `type="video/mp4"` | Browser ko batata hai file MP4 video hai. |
+| Fallback text | Agar browser video tag support na kare toh yeh message show hota hai. |
+| `<footer>` | Bottom copyright section. |
+
+---
+
+## Final Page 4: `contact.html`
+
+### Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Rahul Sharma using an accessible HTML5 contact form.">
+  <title>Rahul Portfolio | Contact</title>
+</head>
+<body>
+  <header>
+    <h1>Contact Me</h1>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Send a Message</h2>
+
+      <form>
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" minlength="3" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="course">Interested Course</label>
+        <select id="course" name="course" required>
+          <option value="">Select a course</option>
+          <option value="html">HTML5</option>
+          <option value="css">CSS</option>
+          <option value="mern">MERN Stack</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" minlength="10" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Rahul Sharma. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+```
+
+### How to Execute
+
+1. `contact.html` file mein code paste karo.
+2. Browser mein open karo.
+3. Blank submit karke validation check karo.
+4. Wrong email type karke email validation check karo.
+5. Message mein 10 characters se kam type karke minlength validation check karo.
+
+### Every Line Explanation
+
+| Line / Code | Detailed Simple Hinglish Explanation |
+|---|---|
+| `<!DOCTYPE html>` | HTML5 document declaration. |
+| `<html lang="en">` | Root element and page language. |
+| `<head>` | Metadata and SEO section. |
+| `<meta charset="UTF-8">` | Character encoding. |
+| `<meta name="viewport"...>` | Responsive page behavior. |
+| `<meta name="description"...>` | Search engine friendly contact page summary. |
+| `<title>Rahul Portfolio \| Contact</title>` | Browser tab title. |
+| `<body>` | Visible page content start. |
+| `<header>` | Top page section. |
+| `<h1>Contact Me</h1>` | Main page heading. |
+| `<nav aria-label="Main navigation">` | Accessible navigation links. |
+| `<main>` | Main contact content. |
+| `<section>` | Contact form section group. |
+| `<h2>Send a Message</h2>` | Form section heading. |
+| `<form>` | Form container. All input fields are inside this form. |
+| `<label for="fullName">Full Name</label>` | Label for name input. `for` connects with input `id`. |
+| `<input type="text"...>` | Text input field for full name. |
+| `id="fullName"` | Unique identifier. Label uses this id to connect. |
+| `name="fullName"` | Field name used when form data is submitted. |
+| `minlength="3"` | Minimum 3 characters required. |
+| `required` | Field cannot be empty. Browser validates it. |
+| `<input type="email"...>` | Email input. Browser checks email format. |
+| `<select id="course"...>` | Dropdown list for course selection. |
+| `<option value="">Select a course</option>` | Default empty option. Required validation works because value is empty. |
+| `<option value="html">HTML5</option>` | Dropdown option for HTML5. |
+| `<textarea...>` | Multi-line message input. |
+| `rows="5"` | Textarea height around five lines. |
+| `minlength="10"` | Message must have at least 10 characters. |
+| `<button type="submit">` | Form submit button. |
+| `</form>` | Form ends here. |
+| `<footer>` | Footer area. |
+
+---
+
 # Final Project Checklist
 
 | Requirement | Completed |
@@ -723,4 +1164,3 @@ In this module, learner created a basic multi-page portfolio website using HTML5
 The most important learning is that HTML gives structure to a webpage. Semantic HTML gives meaning to that structure. Forms collect user input. Validation improves input quality. Accessibility makes the website usable for more people. SEO-friendly HTML helps search engines understand the page. Cross-browser testing makes sure the page works for different users.
 
 After completing this module, learner will have a basic portfolio website and a strong foundation for CSS, JavaScript and MERN stack development.
-
